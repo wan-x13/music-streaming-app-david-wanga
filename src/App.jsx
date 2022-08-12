@@ -1,15 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Login from './components/Login'
 
+
+import Login from './components/Login/Login'
+import styled from 'styled-components'
+import { colors } from './utils/style'
+
+
+
+const AppContainer = styled.div`
+      background-color: ${colors.bagroundBlack};
+      height : 100vh;
+      display
+`
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <div className="App">
+    <AppContainer>
       <Login/>
-    </div>
+    </AppContainer>
   )
 }
 

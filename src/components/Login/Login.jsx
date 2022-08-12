@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { colors } from "../../utils/style";
+import { LinkButton ,Welcome, LoginContainer,TitlePlatform, Blason } from "./styleLogin";
 
 
 
@@ -7,6 +10,7 @@ const Login = () => {
     const REDIRECT_URI = "http://localhost:5173"
     const AUTH_ENDPOINT ="https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE ="token"
+
 
     const [token , setToken ] = useState('')
 
@@ -27,11 +31,15 @@ const Login = () => {
 
 
     return (
-        <div>
-            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >
-                Login with spotify </a>
+        <LoginContainer>
             
-        </div>
+            <Welcome>Bienvenue à</Welcome>
+            <TitlePlatform>WanZik</TitlePlatform>
+            <Blason>Prêt à vous plonger dans l'inconnue ?</Blason>
+            <LinkButton href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`} >
+                Login with spotify </LinkButton>
+            
+        </LoginContainer>
     );
 };
 
