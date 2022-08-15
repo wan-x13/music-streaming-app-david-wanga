@@ -6,6 +6,8 @@ import { useState , useEffect} from 'react'
 import Home from './pages/Home/Home'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useDispatch, useSelector} from 'react-redux'
+import { getToken } from './features/userSlice'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -23,19 +25,20 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
 
-  const [token , setToken ] = useState('')
+  const {userToken } = useSelector(state=> state.user)
+  const dispatch = useDispatch()
   
   useEffect(()=>{
 
     const hash  = window.location.hash
+    const token = hash.substring(1).split("&")[0].split('=')[1]
   
-      if(hash){
-        const token = hash.substring(1).split("&")[0].split('=')[1]
-        console.log(token)
+      if(token){  
+
+         dispatch(getToken(token))
       }
       
-  },[token])
-
+  },[userToken , dispatch])
  
   return (
      <BrowserRouter>

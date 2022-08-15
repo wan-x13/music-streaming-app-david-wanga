@@ -1,12 +1,37 @@
+import styled from "styled-components";
+import Library from "../../components/Library/Library";
+import Slidebar from "../../components/slidebar/Slidebar";
 
 
+const HomeContainer = styled.div`
+       display : flex;
+
+      `
+const LibraryContainer = styled.div`
+      flex : 2;
+      background-color : #1F1F22;
+      `
+const SlideBarContainer = styled.div`
+      width : 20vw;
+      position : sticky;
+      `
 const Home = () => {
     return (
-        <div>
-            <h1>Welocome to WanZik</h1>
-             <button>Logout</button>
+        <HomeContainer>
+           
+           <SlideBarContainer>
+           <Slidebar/>
+
+           </SlideBarContainer>
             
-        </div>
+            <LibraryContainer>
+                <Library/>
+
+            </LibraryContainer>
+           
+            
+            
+        </HomeContainer>
     );
 };
 

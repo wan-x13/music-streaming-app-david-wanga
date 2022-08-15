@@ -1,10 +1,14 @@
 
 
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 import { Welcome, LoginContainer,TitlePlatform, Blason, ButtonLink } from "./styleLogin";
 
 
 
 const Login = () => {
+
+    const {userToken } = useSelector((state)=>state.user)
 
     const handleClick = ()=>{
 
@@ -16,20 +20,20 @@ const Login = () => {
         window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`
 
     }
-   
-    const hash = window.location.hash;
+
   
+   if(userToken){
 
-   
-
-
+     return <Navigate  to="/home"/>
+   }
     return (
         <LoginContainer>
             
             <Welcome>Bienvenue à</Welcome>
             <TitlePlatform>WanZik</TitlePlatform>
             <Blason>Prêt à vous plonger dans l'inconnue ?</Blason>
-            <ButtonLink onClick={handleClick}>Login with spotify</ButtonLink>
+            <ButtonLink 
+            onClick={handleClick}>Login with spotify</ButtonLink>
            
             
         </LoginContainer>
