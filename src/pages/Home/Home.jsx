@@ -4,6 +4,7 @@ import Slidebar from "../../components/slidebar/Slidebar";
 
 
 const HomeContainer = styled.div`
+
        display : flex;
 
       `
