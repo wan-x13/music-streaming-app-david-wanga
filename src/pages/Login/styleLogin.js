@@ -2,20 +2,7 @@ import styled from "styled-components";
 import heroImage from "../../assets/daniel-reche.jpg"
 import { colors } from "../../utils/style";
 
-export const LinkButton = styled.a`
-    width : 180px;
-    height: 30px;
-    background-color: ${colors.bagroundButton};
-    color :white;
-    text-decoration : none;
-    padding : 10px;
-    border-radius: 20px; 
-    position :relative;
-    top : -10rem;
-    font-weight : 600;
-    text-align : center;
-  
-  `
+
 export const LoginContainer = styled.div`
    height : 100vh;
    display : flex;
@@ -43,5 +30,24 @@ export const Blason = styled.p`
       font-size : 25px;
       position : relative;
       top : -25vh;
+
+`
+export const ButtonLink = styled.button`
+
+          width : 220px;
+          height: 40px;
+          background-color: ${colors.bagroundButton};
+          color :white;
+          border-radius: 20px;
+          border : none;
+          position : relative;
+          top : -10rem;
+          font-weight: 600;
+          font-size : 15px;
+
+          &:hover{
+               cursor: pointer;
+          }
+          
 
 `
