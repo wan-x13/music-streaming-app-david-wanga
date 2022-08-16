@@ -8,6 +8,7 @@ import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux'
 import { getToken } from './features/userSlice'
+import UserLibrary from './pages/Your Library/UserLibrary'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -46,6 +47,7 @@ function App() {
        <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path="/home" element ={<Home/>}/>
+        <Route path='/album' element={<UserLibrary/>}/>
        </Routes>
 
      </BrowserRouter>

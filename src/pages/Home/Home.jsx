@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Library from "../../components/Library/Library";
+import Library from "../Playlist/Playlist";
 import Slidebar from "../../components/slidebar/Slidebar";
 
 
