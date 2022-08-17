@@ -14,14 +14,10 @@ const Library = () => {
 
     const {userToken} =  useSelector(state=>state.user)
     const dispatch = useDispatch()
-    const [isCLick, setIsClick] = useState(false)
+    const {AllTracks} = useSelector(state=>state.user)
     
-  const handleClick = ()=>{
-    setIsClick({
-      ...isCLick,
-      isCLick : !isCLick
-    })
-  }
+  
+
   const handleLogout = ()=>{
      dispatch(removeToken())
    
@@ -37,9 +33,18 @@ const Library = () => {
              <NavBar  handleLogout={handleLogout}/>
         <CartExpo>
 
-         <Link to="/album">
-           <Card />
-         </Link>
+          { AllTracks.map(track=>(
+
+              <Card
+                key={track.id}
+                id={track.id}
+                url = {track.image[0].url}
+                name ={track.name}
+               />
+
+          ))}
+           
+       
          
           
              

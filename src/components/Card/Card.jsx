@@ -1,13 +1,13 @@
 import { AiFillPlayCircleIcon, CardContainer } from "./cardStyle";
-import siaPhoto from "../../assets/sia2.webp"
 
-const Card = () => {
+
+const Card = (props) => {
     return (
         <CardContainer>
            
-            <img src={siaPhoto}/>
+            <img src={props.url }/>
             {/* <AiFillPlayCircleIcon/> */}
-            <h3>Unstoppable</h3>
+            <h3>{props.name}</h3>
             
         </CardContainer>
     );

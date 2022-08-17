@@ -1,10 +1,12 @@
 
+
 import { AddPlaylistContainer, AiFillFileAddIcon, BsSearchIcon, FcLikeIcon, FcLikeIconContainerIcon, HeroLogo, HomeContainerIcon, HrContent, LibraryContainerIcon, SearchContainerIcon, SlideBarContainer, VscLibraryIcon } from "./slidebaStyle";
 import { AiFillHomeIcon } from "./slidebaStyle";
 
 
 
 const Slidebar = () => {
+
     return (
         <SlideBarContainer>
 

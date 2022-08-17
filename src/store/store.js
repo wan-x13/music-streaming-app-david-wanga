@@ -9,7 +9,7 @@ import persistStore from "redux-persist/es/persistStore";
 const rootReducer = combineReducers({
     user : authReducer,
 })
-const  persistConfig = {
+export const  persistConfig = {
     key : "root",
     storage
 }

@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
 import { ContentUser, NavBarContainer, NavbarContent } from "./NavbarStyle";
 
 
 const NavBar = ({handleLogout}) => {
+
+  const {identity} = useSelector(state=>state.user)
+
     return (
         <NavBarContainer>
             <NavbarContent>
@@ -9,7 +13,7 @@ const NavBar = ({handleLogout}) => {
             
 
             <ContentUser>
-                    <h3>Wan-x</h3>
+                    <h3>{identity.display_name}</h3>
                     <button onClick={handleLogout}>Logout</button>
 
                     

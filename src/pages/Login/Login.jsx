@@ -15,9 +15,19 @@ const Login = () => {
         const CLIENT_ID = "b60e4391958140e0adb302ec6a11f6f5"
         const REDIRECT_URI = "http://localhost:5173"
         const AUTH_ENDPOINT ="https://accounts.spotify.com/authorize"
-        const RESPONSE_TYPE ="token"
+        const RESPONSE_TYPE ="token&show_dialog=true"
 
-        window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`
+        const scope = ["user-read-email", 
+        "ugc-image-upload", 
+        "user-read-playback-state","user-top-read", 
+        "user-read-recently-played", 
+        "user-read-playback-position",
+        "user-modify-playback-state",
+        "user-library-modify",
+        "user-library-read",
+        "playlist-modify-public"]
+
+        window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scope.join(" ")}&response_type=${RESPONSE_TYPE}`
 
     }
 

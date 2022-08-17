@@ -7,7 +7,7 @@ import Home from './pages/Home/Home'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux'
-import { getToken } from './features/userSlice'
+import { getAllTracks, getArtistAlbum, getIdentity, getToken } from './features/userSlice'
 import UserLibrary from './pages/Your Library/UserLibrary'
 
 
@@ -22,11 +22,12 @@ const GlobalStyle = createGlobalStyle`
       margin : 0;
       background : ${colors.bagroundBlack}
     }
+
 `
 
 function App() {
 
-  const {userToken } = useSelector(state=> state.user)
+  const {userToken  } = useSelector(state=> state.user)
   const dispatch = useDispatch()
   
   useEffect(()=>{
@@ -37,9 +38,26 @@ function App() {
       if(token){  
 
          dispatch(getToken(token))
+         
       }
       
   },[userToken , dispatch])
+
+  useEffect(()=>{
+
+    dispatch(getIdentity())
+    dispatch(getAllTracks())
+    dispatch(getArtistAlbum())
+
+  },[dispatch])
+
+ 
+  
+ 
+
+
+
+
  
   return (
      <BrowserRouter>

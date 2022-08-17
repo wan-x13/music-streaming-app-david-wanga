@@ -1,0 +1,12 @@
+export const Artists = ["5WUlDfRSoLAfcVSX1WnrxN",
+                        "77leAzJhNtGmrB9EzWxBv7",
+                       "5pKCCKE2ajJHZ9KAiaK11H",
+                        "31TPClRtHm23RisEBtV3X7",
+                        "6IflU2YrY5Cyw7YoBICosV",
+                        "3fMbdgg4jU18AjLCKBhRSm",
+                        "1HY2Jd0NmPuamShAr6KMms",
+                        "0EmeFodog0BfCgMzAIvKQp",
+                        "2DlGxzQSjYe5N6G9nkYghR",
+                         "3DiDSECUqqY1AuBP8qtaIa",
+                        "4dpARuHxo51G3z768sgnrY",
+                        "0hCNtLu0JehylgoiP8L4Gh"]
