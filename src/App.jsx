@@ -88,9 +88,12 @@ function App() {
     
        <Routes>
         <Route path='/' element={<Login/>}/>
-        <Route path="/home" element ={<Home/>}/>
-        <Route path='/album' element={<UserLibrary/>}/>
-        <Route path='/wanzik' element={<ProtectedRoute/>}/>
+        
+        <Route path='wanzik' element={<ProtectedRoute/>}>
+            <Route path="home" element ={<Home/>}/>
+            <Route path='album' element={<UserLibrary/>}/>
+
+        </Route>
        
        </Routes>
 
