@@ -3,20 +3,21 @@ import {  createSlice } from "@reduxjs/toolkit";
 
 
 export const initialState = {
-    id: "",
-    images : [],
-    nameAlbum : "",
-    nameTrack : "",
-    duration,
+    tracks : [],
 }
-export const trackSlice = createSlice({
-    name : "tracks",
+const trackSlice = createSlice({
+    name : "track",
     initialState,
     reducers:{
         getTracks : (state, action)=>{
+            state.tracks = action.payload
+            
             
         }
     }
 
 
 })
+
+export const {getTracks} = trackSlice.actions
+export default trackSlice.reducer

@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux'
 import { getAllTracks, getArtistAlbum, getIdentity, getToken } from './features/userSlice'
 import UserLibrary from './pages/Your Library/UserLibrary'
+import { getTracks } from './features/trackSlice'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -27,29 +28,48 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
 
-  const {userToken  } = useSelector(state=> state.user)
+  const {userToken , AllTracks } = useSelector(state=> state.user)
+  const [tokenUser , setTokenUser] = useState('')
   const dispatch = useDispatch()
-  
+  const {tracks} = useSelector(state=>state.track)
+ 
+    const morceauSong = AllTracks.map(({id, album,name, duration_ms, uri})=>{
+          let img= []
+         if(album){
+           const {images} = album
+           img =[...images]
+         }
+      return {"id" : id, "image" : img , "name": name, "duration_ms" : duration_ms, "uri": uri}
+    })
+
   useEffect(()=>{
 
     const hash  = window.location.hash
     const token = hash.substring(1).split("&")[0].split('=')[1]
   
+   
+
       if(token){  
+        window.localStorage.setItem('token', token)
+
+        setTokenUser(token)
 
          dispatch(getToken(token))
          
       }
+     
       
-  },[userToken , dispatch])
+  },[userToken , tracks, dispatch ])
 
   useEffect(()=>{
 
     dispatch(getIdentity())
     dispatch(getAllTracks())
     dispatch(getArtistAlbum())
+    dispatch(getTracks(morceauSong))
+    
 
-  },[dispatch])
+  },[])
 
  
   

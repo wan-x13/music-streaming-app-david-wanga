@@ -1,13 +1,13 @@
 import { AiFillPlayCircleIcon, CardContainer } from "./cardStyle";
 
 
-const Card = (props) => {
+const Card = ({id, name, url , uri}) => {
     return (
         <CardContainer>
            
-            <img src={props.url }/>
+            <img src={url }/>
             {/* <AiFillPlayCircleIcon/> */}
-            <h3>{props.name}</h3>
+            <h3>{name}</h3>
             
         </CardContainer>
     );

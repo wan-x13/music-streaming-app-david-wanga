@@ -4,7 +4,8 @@ import { Link, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Card from '../../components/Card/Card';
 import NavBar from '../../components/NavBar/NavBar';
-import { removeToken } from '../../features/userSlice';
+
+import {  removeToken } from '../../features/userSlice';
 import { colors } from '../../utils/style';
 import { CartExpo, LibraryContainer } from './playlistStyle';
 
@@ -13,11 +14,10 @@ import { CartExpo, LibraryContainer } from './playlistStyle';
 const Library = () => {
 
     const {userToken} =  useSelector(state=>state.user)
-    const dispatch = useDispatch()
-    const {AllTracks} = useSelector(state=>state.user)
-    
+    const  {tracks} = useSelector(state=>state.track)
   
-
+    const dispatch = useDispatch()
+    
   const handleLogout = ()=>{
      dispatch(removeToken())
    
@@ -33,13 +33,14 @@ const Library = () => {
              <NavBar  handleLogout={handleLogout}/>
         <CartExpo>
 
-          { AllTracks.map(track=>(
+          { tracks.map(track=>(
 
               <Card
                 key={track.id}
                 id={track.id}
                 url = {track.image[0].url}
                 name ={track.name}
+                uri = {track.uri}
                />
 
           ))}

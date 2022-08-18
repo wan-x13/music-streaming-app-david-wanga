@@ -3,11 +3,13 @@ import authReducer  from "../features/userSlice"
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
-
+import trackReducer from "../features/trackSlice"
 
 
 const rootReducer = combineReducers({
     user : authReducer,
+    track : trackReducer,
+
 })
 export const  persistConfig = {
     key : "root",
