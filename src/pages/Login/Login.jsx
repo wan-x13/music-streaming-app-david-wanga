@@ -2,14 +2,16 @@
 
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { initialState } from "../../features/userSlice";
 import { Welcome, LoginContainer,TitlePlatform, Blason, ButtonLink } from "./styleLogin";
 
 
 
 const Login = () => {
 
-    const {userToken } = useSelector((state)=>state.user)
-
+    const {userToken  } = useSelector((state)=>state.user)
+   const {TitleApp} = initialState
+    console.log(TitleApp)
     const handleClick = ()=>{
 
         const CLIENT_ID = "b60e4391958140e0adb302ec6a11f6f5"
@@ -40,7 +42,7 @@ const Login = () => {
         <LoginContainer>
             
             <Welcome>Bienvenue à</Welcome>
-            <TitlePlatform>WanZik</TitlePlatform>
+            <TitlePlatform>{TitleApp}</TitlePlatform>
             <Blason>Prêt à vous plonger dans l'inconnue ?</Blason>
             <ButtonLink 
             onClick={handleClick}>Login with spotify</ButtonLink>

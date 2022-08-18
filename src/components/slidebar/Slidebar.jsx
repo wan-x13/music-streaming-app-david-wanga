@@ -2,19 +2,20 @@
 
 import { useDispatch } from "react-redux";
 import { toggleCreate, toggleLibrary, toggleLiked, toggleSearch, toggleHome } from "../../features/navigateSlice";
+import { initialState } from "../../features/userSlice";
 import { AddPlaylistContainer, AiFillFileAddIcon, BsSearchIcon, FcLikeIcon, FcLikeIconContainerIcon, HeroLogo, HomeContainerIcon, HrContent, LibraryContainerIcon, SearchContainerIcon, SlideBarContainer, VscLibraryIcon } from "./slidebaStyle";
 import { AiFillHomeIcon } from "./slidebaStyle";
 
 
-
 const Slidebar = () => {
     const dispatch = useDispatch()
+    const {TitleApp} = initialState
 
     return (
         <SlideBarContainer>
 
                 <HeroLogo>
-                    WanZik
+                    {TitleApp}
                 </HeroLogo>
           <HomeContainerIcon onClick={()=>dispatch(toggleHome())}>
            

@@ -11,7 +11,7 @@ const trackSlice = createSlice({
     reducers:{
         getTracks : (state, action)=>{
             state.tracks = action.payload
-            
+            state.action = []
             
         }
     }

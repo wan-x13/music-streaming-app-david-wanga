@@ -5,8 +5,10 @@ import styled from "styled-components";
 export const NavBarContainer = styled.nav`
                 background : #040464;
                 width : 80vw;
+               
                 position : fixed;
                 top: 0;
+             
                 // margin-left: 14px;
                 
 
@@ -16,8 +18,8 @@ export const NavbarContent = styled.div`
          display : flex;
          justify-content : space-between;
          align-items : center;
-        margin-left : 20px;
-        margin-right : 20px;
+         margin-left : 20px;
+         margin-right : 20px;
         
     
 
@@ -29,6 +31,7 @@ export const NavbarContent = styled.div`
 
 `
 export const ContentUser = styled.div`
+
 display :flex;
 gap : 20px;
 

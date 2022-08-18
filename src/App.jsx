@@ -66,22 +66,14 @@ function App() {
 
   useEffect(()=>{
 
-    dispatch(getIdentity())
-    dispatch(getAllTracks())
+ 
+    
     dispatch(getArtistAlbum())
-    dispatch(getTracks(morceauSong))
+  
     
 
-  },[])
+  },[dispatch])
 
- 
-  
- 
-
-
-
-
- 
   return (
      <BrowserRouter>
        <GlobalStyle/>

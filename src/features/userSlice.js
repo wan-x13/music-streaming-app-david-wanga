@@ -12,6 +12,7 @@ export const initialState = {
     userToken : localStorage.getItem("userToken")? localStorage.getItem("userToken"): null, 
     identity : [],
     AllTracks: [],
+    TitleApp : "WaMuzika",
     isLoading : true,
 }
 
@@ -21,7 +22,7 @@ export const getIdentity = createAsyncThunk('user/userIdentity',
      const response = await axios.get('https://api.spotify.com/v1/me',
         {  
             headers : {
-                Authorization : "Bearer " + token2,
+                Authorization : "Bearer " + window.localStorage.getItem("token"),
                 "Content-Type": "application/json"
             }
         })
@@ -40,7 +41,7 @@ export const getAllTracks = createAsyncThunk('user/getAlltracks', async(_, thunk
     const resp = await axios.get(` https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO3vuU6c/tracks`, {
 
         headers : {
-            Authorization : "Bearer " + token2,
+            Authorization : "Bearer " + window.localStorage.getItem("token"),
             "Content-Type": "application/json"
         }
 
@@ -60,7 +61,7 @@ async ()=>{
     const resp = await axios.get(` https://api.spotify.com/v1/artists/5WUlDfRSoLAfcVSX1WnrxN/albums `,{
 
         headers : {
-            Authorization : "Bearer " + token2,
+            Authorization : "Bearer " + window.localStorage.getItem("token"),
             "Content-Type": "application/json"
         }
     })

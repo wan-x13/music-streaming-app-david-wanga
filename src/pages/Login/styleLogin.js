@@ -19,17 +19,18 @@ export const Welcome = styled.p`
      font-weight : 600;
      font-size : 30px; 
      position : relative;
-     top : 25vh;
+     top : 20vh;
      right : 29vh;
 `
 export const TitlePlatform = styled.h1`
      font-weight : 700;
-     font-size : 9rem;
+     font-size : 7rem;
 `
 export const Blason = styled.p`
       font-size : 25px;
       position : relative;
-      top : -25vh;
+      top : -18vh;
+      left : -40px;
 
 `
 export const ButtonLink = styled.button`
@@ -41,7 +42,7 @@ export const ButtonLink = styled.button`
           border-radius: 20px;
           border : none;
           position : relative;
-          top : -10rem;
+          top : -8rem;
           font-weight: 600;
           font-size : 15px;
 
