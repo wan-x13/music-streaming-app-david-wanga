@@ -7,6 +7,7 @@ export const NavBarContainer = styled.nav`
                 width : 80vw;
                 position : fixed;
                 top: 0;
+                // margin-left: 14px;
                 
 
  
@@ -17,6 +18,7 @@ export const NavbarContent = styled.div`
          align-items : center;
         margin-left : 20px;
         margin-right : 20px;
+        
     
 
         h1{

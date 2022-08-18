@@ -12,6 +12,7 @@ export const CardContainer = styled.div`
        margin-left : 30px;
        display : flex;
        flex-direction : column;
+       justify-content: center;
        
 
        img{

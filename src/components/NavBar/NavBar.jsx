@@ -1,10 +1,25 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { removeToken } from "../../features/userSlice";
 import { ContentUser, NavBarContainer, NavbarContent } from "./NavbarStyle";
 
 
-const NavBar = ({handleLogout}) => {
+const NavBar = () => {
 
   const {identity} = useSelector(state=>state.user)
+  const {userToken} =  useSelector(state=>state.user)
+  const dispatch = useDispatch()
+
+    
+  const handleLogout = ()=>{
+     dispatch(removeToken())
+   
+    return userToken
+  }
+  if(!userToken){
+
+    return <Navigate to="/"/>
+  }
 
     return (
         <NavBarContainer>

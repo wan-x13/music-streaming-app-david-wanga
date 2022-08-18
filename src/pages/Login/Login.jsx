@@ -34,7 +34,7 @@ const Login = () => {
   
    if(userToken){
 
-     return <Navigate  to="/home"/>
+     return <Navigate  to= "/wanzik"/>
    }
     return (
         <LoginContainer>
