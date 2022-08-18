@@ -10,6 +10,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import { getAllTracks, getArtistAlbum, getIdentity, getToken } from './features/userSlice'
 import UserLibrary from './pages/Your Library/UserLibrary'
 import { getTracks } from './features/trackSlice'
+import Slidebar from './components/slidebar/Slidebar'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -22,6 +23,9 @@ const GlobalStyle = createGlobalStyle`
       height: 100vh;
       margin : 0;
       background : ${colors.bagroundBlack}
+    }
+    body > #root{
+      display: flex;
     }
 
 `
@@ -82,10 +86,12 @@ function App() {
   return (
      <BrowserRouter>
        <GlobalStyle/>
+       <Slidebar />
        <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path="/home" element ={<Home/>}/>
         <Route path='/album' element={<UserLibrary/>}/>
+       
        </Routes>
 
      </BrowserRouter>

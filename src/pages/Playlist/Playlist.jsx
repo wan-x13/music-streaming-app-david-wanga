@@ -7,12 +7,14 @@ import NavBar from '../../components/NavBar/NavBar';
 
 import {  removeToken } from '../../features/userSlice';
 import { colors } from '../../utils/style';
+import UserLibrary from '../Your Library/UserLibrary';
 import { CartExpo, LibraryContainer } from './playlistStyle';
 
 
 
 const Library = () => {
-
+    
+    const {isHome, isSearch, isLibrary, isLiked, isCreate} = useSelector(state=>state.navigate) 
     const {userToken} =  useSelector(state=>state.user)
     const  {tracks} = useSelector(state=>state.track)
   
@@ -26,6 +28,20 @@ const Library = () => {
   if(!userToken){
 
     return <Navigate to="/"/>
+  }
+  if(isLibrary){
+
+    return (
+      <LibraryContainer>
+          <NavBar  handleLogout={handleLogout}/>
+        
+        <UserLibrary/>
+
+        
+          
+
+      </LibraryContainer>
+    )
   }
   
     return (
@@ -43,7 +59,8 @@ const Library = () => {
                 uri = {track.uri}
                />
 
-          ))}
+          ))} 
+          
            
        
          

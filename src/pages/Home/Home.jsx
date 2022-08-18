@@ -3,27 +3,31 @@ import Library from "../Playlist/Playlist";
 import Slidebar from "../../components/slidebar/Slidebar";
 
 
-const HomeContainer = styled.div`
+export const HomeContainer = styled.div`
 
        display : flex;
+       width: 80vw;
+       margin-left : 18rem;
 
       `
-const LibraryContainer = styled.div`
+export const LibraryContainer = styled.div`
       flex : 2;
       background-color : #1F1F22;
       `
-const SlideBarContainer = styled.div`
+export const SlideBarContainer = styled.div`
       width : 20vw;
       position : sticky;
       `
+
+
 const Home = () => {
     return (
         <HomeContainer>
            
-           <SlideBarContainer>
+           {/* <SlideBarContainer>
            <Slidebar/>
 
-           </SlideBarContainer>
+           </SlideBarContainer> */}
             
             <LibraryContainer>
                 <Library/>
