@@ -27,11 +27,9 @@ export const navigateSlice = createSlice({
         toggleSearch: (state)=>{
             return{
                 ...state,
-                isHome : false,
-                isCreate : false,
-                isLiked :false,
+                
                 isSearch : true,
-                isLibrary: false,
+              
              }
         },
         toggleLibrary: (state)=>{
