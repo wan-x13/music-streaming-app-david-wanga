@@ -1,9 +1,17 @@
+import { useDispatch } from "react-redux";
+import { getUri } from "../../features/play";
 import { AiFillPlayCircleIcon, CardContainer } from "./cardStyle";
 
 
 const Card = ({id, name, url , uri}) => {
+
+    const dispatch = useDispatch()
+  
+    
     return (
-        <CardContainer>
+        <CardContainer
+          onClick={()=>dispatch(getUri(uri))}
+          >
            
             <img src={url }/>
             {/* <AiFillPlayCircleIcon/> */}

@@ -1,19 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
+import PLayer from './components/PLayer/PLayer';
 import Slidebar from './components/slidebar/Slidebar';
 import Home from './pages/Home/Home';
 
 
 
 const RouteContainer = styled.div`
-      display: flex;
+   
 
 `
+const RouteContent = styled.div`
+      display: flex;
+    `
+const PlayerContainer = styled.div`
+      position : fixed;
+      bottom: 0;
+      width : 100vw;
+     
+      `
 const ProtectedRoute = () => {
     return (
         <RouteContainer>
+           
+            <RouteContent>
             <Slidebar/>
             <Home/>
+                
+            </RouteContent>
+
+            <PlayerContainer>
+               <PLayer/>
+
+            </PlayerContainer>
+          
+            
+          
             
         </RouteContainer>
     );

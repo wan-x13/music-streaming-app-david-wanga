@@ -18,18 +18,23 @@ export const initialState = {
 
 export const getIdentity = createAsyncThunk('user/userIdentity', 
     async  ()=>{
-        
-     const response = await axios.get('https://api.spotify.com/v1/me',
+      try {
+
+        const response = await axios.get('https://api.spotify.com/v1/me',
         {  
             headers : {
                 Authorization : "Bearer " + window.localStorage.getItem("token"),
                 "Content-Type": "application/json"
             }
         })
-
-      
-      
-       return response.data
+        return response.data
+        
+      } catch (error) {
+        console.log(error)
+        
+      }  
+    
+     
       
        
       
@@ -50,6 +55,8 @@ export const getAllTracks = createAsyncThunk('user/getAlltracks', async(_, thunk
    const {items}= resp.data
   
     const tracks = items.map(item=>item.track)
+
+  
 
     return tracks
     
@@ -102,6 +109,7 @@ const authSlice = createSlice({
         [getArtistAlbum.fulfilled] : (state, action)=>{
           
             state.isLoading = false;
+            console.log(action)
         }
        
     }

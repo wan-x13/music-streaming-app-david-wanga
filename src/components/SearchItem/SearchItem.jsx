@@ -26,7 +26,7 @@ const BsSearchIcon = styled(BsSearch)`
     position : relative;
     left : 40px;
     top: 2px;
-    border : 2px solid red;
+    
 
 `
 const SearchItem = () => {

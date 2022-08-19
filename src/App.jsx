@@ -7,10 +7,10 @@ import Home from './pages/Home/Home'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux'
-import { getAllTracks, getArtistAlbum, getIdentity, getToken } from './features/userSlice'
+import {  getAllTracks, getArtistAlbum, getIdentity, getToken } from './features/userSlice'
 import UserLibrary from './pages/Your Library/UserLibrary'
 import { getTracks } from './features/trackSlice'
-import Slidebar from './components/slidebar/Slidebar'
+
 import ProtectedRoute from './ProtectedRoute'
 
 
@@ -66,8 +66,9 @@ function App() {
 
   useEffect(()=>{
 
- 
-    
+    dispatch(getAllTracks())
+    dispatch(getTracks(morceauSong))
+    dispatch(getIdentity())
     dispatch(getArtistAlbum())
   
     
