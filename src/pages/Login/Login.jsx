@@ -14,8 +14,8 @@ const Login = () => {
     console.log(TitleApp)
     const handleClick = ()=>{
 
-        const CLIENT_ID = "b60e4391958140e0adb302ec6a11f6f5"
-        const REDIRECT_URI = "http://localhost:5173"
+        const CLIENT_ID = "f67654206bde49949a78f35942476269"
+        const REDIRECT_URI = "https://rainbow-axolotl-031360.netlify.app/"
         const AUTH_ENDPOINT ="https://accounts.spotify.com/authorize"
         const RESPONSE_TYPE ="token&show_dialog=true"
 
