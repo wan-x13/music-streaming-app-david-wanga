@@ -16,6 +16,7 @@ const FormContainer = styled.form`
         height : 40px;
         padding-left : 60px;
         font-size: 15px;
+        color : black;
       }
 `
 const BsSearchIcon = styled(BsSearch)`
@@ -25,6 +26,7 @@ const BsSearchIcon = styled(BsSearch)`
     position : relative;
     left : 40px;
     top: 2px;
+    border : 2px solid red;
 
 `
 const SearchItem = () => {
@@ -41,6 +43,7 @@ const SearchItem = () => {
             placeholder='search song, artist, playlist' 
             autoFocus
             value={search}
+            onChange={(e)=>setSearch(e.target.value)}
 
             />
         </FormContainer>

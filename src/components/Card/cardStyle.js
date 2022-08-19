@@ -5,7 +5,7 @@ import { colors } from "../../utils/style";
 
 export const CardContainer = styled.div`
        width : 230px;
-       height: 300px;
+       // height: 300px;
        border-radius: 20px;
        background : #232327;
        margin-top: 5rem;
