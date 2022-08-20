@@ -6,7 +6,7 @@ import persistStore from "redux-persist/es/persistStore";
 import trackReducer from "../features/trackSlice"
 import navigateReducer from "../features/navigateSlice"
 import playReducer  from "../features/play"; 
-
+import playlistReducer from "../features/playlistSlice"
 
 
 
@@ -15,6 +15,7 @@ const rootReducer = combineReducers({
     track : trackReducer,
     navigate : navigateReducer,
     play : playReducer,
+    playlist : playlistReducer,
 
 })
 export const  persistConfig = {

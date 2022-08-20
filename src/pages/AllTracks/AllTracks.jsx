@@ -5,7 +5,7 @@ import { CartExpo, LibraryContainer } from './playlistStyle';
 
 
 
-const Playlist = () => {
+const AllTracks= () => {
     
     
   
@@ -44,4 +44,4 @@ const Playlist = () => {
     );
 };
 
-export default Playlist;
+export default AllTracks;

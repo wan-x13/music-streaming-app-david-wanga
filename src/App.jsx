@@ -12,7 +12,7 @@ import UserLibrary from './pages/Your Library/UserLibrary'
 import { getTracks } from './features/trackSlice'
 
 import ProtectedRoute from './ProtectedRoute'
-import Playlist from './pages/Playlist/Playlist'
+import { getPlaylist1, getPlaylist2, getPlaylist3, getPlaylist4} from './features/playlistSlice'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -73,6 +73,10 @@ function App() {
     dispatch(getIdentity())
     dispatch(getRecentlyPlayed())
     dispatch(getCategories())
+    dispatch(getPlaylist1())
+    dispatch(getPlaylist2())
+    dispatch(getPlaylist3())
+    dispatch(getPlaylist4())
   
     
 

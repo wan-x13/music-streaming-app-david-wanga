@@ -10,6 +10,7 @@ const RecentlyPlayerContainer  = styled.div`
         margin-top : 4rem;
         background-color : ${colors.bagroundBlack};
         height : auto;
+     
         
         
       `
@@ -29,6 +30,13 @@ const Head = styled.div`
       h4:hover{
         cursor: pointer;
       }
+      h3{
+        font-size: 30px;
+        line-height : 40px;
+      }
+      h4{
+        margin-top: 40px;
+      }
      `
 const CardPlayer = styled.div`
        width : 230px;
@@ -38,6 +46,7 @@ const CardPlayer = styled.div`
        justify-content : center;
        align-items: center;
        border-radius : 20Px;
+       margin-top: -40px;
 
        img{
         width : 200px;
