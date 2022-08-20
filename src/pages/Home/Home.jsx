@@ -5,11 +5,14 @@ import NavBar from "../../components/NavBar/NavBar";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import UserLibrary from "../Your Library/UserLibrary";
+import Playlist from "../Playlist/Playlist";
+import RecentlyPlayedTrack from "../../components/RecentlyPlayer/RecentlyPlayedTrack";
 
 
 export const HomeContainer = styled.div`
 
        display : flex;
+       justify-content : center;
        width: 80vw;
        margin-left : 18rem;
    
@@ -24,7 +27,7 @@ export const LibraryContainer = styled.div`
 
 const Home = () => {
 
-    const {isHome, isSearch, isLibrary, isLiked, isCreate} = useSelector(state=>state.navigate) 
+    const {isHome, isSearch, isLibrary, isLiked, isCreate , isPlaylist} = useSelector(state=>state.navigate) 
  if(isLibrary){
 
   return( <HomeContainer>
@@ -32,6 +35,18 @@ const Home = () => {
     <UserLibrary/>
 
    </HomeContainer>)
+ }
+ if(isPlaylist){
+
+    return (
+
+        <HomeContainer>
+        <NavBar/>
+          <Playlist/>
+    </HomeContainer>
+
+    )
+    
  }
     
     return (
@@ -42,12 +57,22 @@ const Home = () => {
 
            </SlideBarContainer> */}
            <NavBar/>
-           
-            
-            <LibraryContainer>
-                <Library/>
+         
+            <RecentlyPlayedTrack/>
 
-            </LibraryContainer>
+          
+           
+             
+               {/* <Playlist/> */}
+
+          
+{/* 
+            <LibraryContainer>
+               
+               
+               
+
+            </LibraryContainer> */}
            
             
             

@@ -15,6 +15,7 @@ const NavBar = () => {
     
   const handleLogout = ()=>{
      dispatch(removeToken())
+     window.localStorage.removeItem('token')
    
     return userToken
   }
@@ -28,7 +29,7 @@ const NavBar = () => {
             <NavbarContent> 
                 <SearchItem/> 
             <ContentUser>
-            {/* <h3>{identity.display_name}</h3> */}
+            <h3>{identity?.display_name}</h3>
             <button onClick={handleLogout}>Logout</button>
               </ContentUser>
             </NavbarContent>

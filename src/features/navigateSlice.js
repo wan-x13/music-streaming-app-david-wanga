@@ -7,6 +7,7 @@ const initialState = {
     isLibrary: false,
     isLiked : false,
     isCreate : false,
+    isPlaylist : false,
     
 }
 
@@ -22,6 +23,7 @@ export const navigateSlice = createSlice({
             isLiked :false,
             isSearch : false,
             isLibrary: false,
+            isPlaylist : false,
          }
         },
         toggleSearch: (state)=>{
@@ -40,6 +42,7 @@ export const navigateSlice = createSlice({
                 isLiked :false,
                 isSearch : false,
                 isLibrary: true,
+                isPlaylist: false,
              }
         },
         toggleLiked: (state)=>{
@@ -50,6 +53,8 @@ export const navigateSlice = createSlice({
                 isLiked :true,
                 isSearch : false,
                 isLibrary: false,
+                isPlaylist: false,
+
              }
         },
         toggleCreate : (state)=>{
@@ -60,6 +65,18 @@ export const navigateSlice = createSlice({
                 isLiked :false,
                 isSearch : false,
                 isLibrary: false,
+                isPlaylist : false,
+             }
+        },
+        togglePlaylist : (state)=>{
+            return{
+                ...state,
+                isHome : false,
+                isCreate : false,
+                isLiked :false,
+                isSearch : false,
+                isLibrary: false,
+                isPlaylist : true,
              }
         },
         reinit : (state)=>{
@@ -74,6 +91,6 @@ export const navigateSlice = createSlice({
     
     
 })
-export const {toggleCreate, toggleHome, toggleLibrary, toggleSearch, toggleLiked, reinit} = navigateSlice.actions
+export const {toggleCreate, toggleHome, toggleLibrary, toggleSearch, toggleLiked, togglePlaylist,reinit} = navigateSlice.actions
 
 export default navigateSlice.reducer

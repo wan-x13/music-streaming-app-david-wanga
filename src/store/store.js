@@ -8,6 +8,8 @@ import navigateReducer from "../features/navigateSlice"
 import playReducer  from "../features/play"; 
 
 
+
+
 const rootReducer = combineReducers({
     user : authReducer,
     track : trackReducer,
@@ -27,4 +29,6 @@ export const store = configureStore({
          
 })
 
+
 export const persistor = persistStore(store)
+

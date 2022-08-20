@@ -12,6 +12,7 @@ export const initialState = {
     userToken : localStorage.getItem("userToken")? localStorage.getItem("userToken"): null, 
     identity : [],
     AllTracks: [],
+    recentPlayer : [],
     TitleApp : "WaMuzika",
     isLoading : true,
 }
@@ -63,9 +64,38 @@ export const getAllTracks = createAsyncThunk('user/getAlltracks', async(_, thunk
    
 
 })
-export const getArtistAlbum = createAsyncThunk('user/getArtistAlbums', 
+export const getRecentlyPlayed = createAsyncThunk('user/getRecentlyPlayed', 
 async ()=>{
-    const resp = await axios.get(` https://api.spotify.com/v1/artists/5WUlDfRSoLAfcVSX1WnrxN/albums `,{
+    const resp = await axios.get(`https://api.spotify.com/v1/me/player/recently-played  `,{
+
+        headers : {
+            Authorization : "Bearer " + window.localStorage.getItem("token"),
+            "Content-Type": "application/json"
+        }
+    })
+ 
+    const {items} = resp.data
+    // console.log(items)
+   const track = items.map(item=>item.track).map(({id, name , album, duration_ms, uri })=> {
+       let image= []
+      if(album){
+      const {images} = album
+      image =[...images]
+    }
+    return {id, name, image , duration_ms, uri}
+   })
+//    console.log(track)
+
+   return track
+    
+})
+
+
+
+
+export const getCategories = createAsyncThunk('user/getCategories', 
+async ()=>{
+    const resp = await axios.get(`https://api.spotify.com/v1/users/31t2md6klgjx653ats7j53gpthkq/playlists `,{
 
         headers : {
             Authorization : "Bearer " + window.localStorage.getItem("token"),
@@ -75,8 +105,9 @@ async ()=>{
     console.log(resp)
 })
 
-      
 
+      
+const playlisUser = " https://api.spotify.com/v1/me/playlists "
 
 
 
@@ -106,8 +137,13 @@ const authSlice = createSlice({
             console.log(action)
             state.isLoading = false
         },
-        [getArtistAlbum.fulfilled] : (state, action)=>{
-          
+        [getRecentlyPlayed.fulfilled] : (state, action)=>{
+            
+            state.isLoading = false;
+            state.recentPlayer = action.payload
+            console.log(action)
+        },
+        [getCategories.fulfilled] : (state, action)=>{
             state.isLoading = false;
             console.log(action)
         }

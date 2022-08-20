@@ -7,11 +7,12 @@ import Home from './pages/Home/Home'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux'
-import {  getAllTracks, getArtistAlbum, getIdentity, getToken } from './features/userSlice'
+import {  getAllTracks, getCategories, getIdentity, getRecentlyPlayed, getToken } from './features/userSlice'
 import UserLibrary from './pages/Your Library/UserLibrary'
 import { getTracks } from './features/trackSlice'
 
 import ProtectedRoute from './ProtectedRoute'
+import Playlist from './pages/Playlist/Playlist'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -28,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
  
 
 `
+
 
 function App() {
 
@@ -69,7 +71,8 @@ function App() {
     dispatch(getAllTracks())
     dispatch(getTracks(morceauSong))
     dispatch(getIdentity())
-    dispatch(getArtistAlbum())
+    dispatch(getRecentlyPlayed())
+    dispatch(getCategories())
   
     
 
@@ -85,7 +88,6 @@ function App() {
         <Route path='wanzik' element={<ProtectedRoute/>}>
             <Route path="home" element ={<Home/>}/>
             <Route path='album' element={<UserLibrary/>}/>
-
         </Route>
        
        </Routes>
