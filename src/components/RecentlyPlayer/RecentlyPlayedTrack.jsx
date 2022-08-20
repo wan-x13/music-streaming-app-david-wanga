@@ -74,6 +74,7 @@ const RecentlyPlayedTrack = () => {
             
             <RecentlyPlayerContent>
             <CardPlayer 
+              key={recentPlayer[0].id}
                id={recentPlayer[0]?.id}
                uri = {recentPlayer[0].uri}
                onClick={()=>dispatch(getUri(recentPlayer[0].uri))}
@@ -86,6 +87,7 @@ const RecentlyPlayedTrack = () => {
 
             </CardPlayer>
             <CardPlayer 
+               key={recentPlayer[1].id}
                id={recentPlayer[1]?.id}
                uri = {recentPlayer[1].uri}
                onClick={()=>dispatch(getUri(recentPlayer[1].uri))}
@@ -97,6 +99,7 @@ const RecentlyPlayedTrack = () => {
 
             </CardPlayer>
             <CardPlayer 
+               key={recentPlayer[2].id}
                id={recentPlayer[2]?.id}
                uri = {recentPlayer[2].uri}
                onClick={()=>dispatch(getUri(recentPlayer[2].uri))}
@@ -108,6 +111,7 @@ const RecentlyPlayedTrack = () => {
 
             </CardPlayer>
             <CardPlayer 
+               key={recentPlayer[3].id}
                id={recentPlayer[3]?.id}
                uri = {recentPlayer[3].uri}
                onClick={()=>dispatch(getUri(recentPlayer[3].uri))}
