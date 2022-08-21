@@ -11,6 +11,7 @@ export const SlideBarContainer = styled.div`
      display : flex;
      flex-direction : column;
      padding : 30px;
+     width: 30vw;
          
 `
 
@@ -40,7 +41,7 @@ export const HomeContainerIcon = styled.div`
                 color : #C5D7D9;
                 font-size : 15px;
             }
-            &: hover{
+            &:hover{
                 cursor: pointer;
             }
 `
@@ -55,7 +56,7 @@ export const SearchContainerIcon = styled.div`
                         color : #C5D7D9;
                         font-size : 15px;
                     }
-                    &: hover{
+                    &:hover{
                         cursor: pointer;
                     }
 `
@@ -69,7 +70,7 @@ export const LibraryContainerIcon =  styled.div`
                         color : #C5D7D9;
                         font-size : 15px;
                     }
-                    &: hover{
+                    &:hover{
                         cursor: pointer;
                     }
                     `
@@ -88,7 +89,7 @@ export const AddPlaylistContainer = styled.div`
                         color : #C5D7D9;
                         font-size : 15px;
                     }
-                    &: hover{
+                    &:hover{
                         cursor: pointer;
                     }
           
@@ -110,7 +111,7 @@ export const FcLikeIconContainerIcon = styled.div`
                         color : #C5D7D9;
                         font-size : 15px;
                     }
-                    &: hover{
+                    &:hover{
                         cursor: pointer;
                     }
                     `
@@ -120,9 +121,7 @@ export const FcLikeIcon = styled(FcLike)`
                     width : 25px;
                   
          `
-export  const HrContent = styled.hr`
-               background-color : #C5D7D9;
-            `
+
 export const HeroLogo = styled.h1`
                color : #C5D7D9;
                font-size : 40px;

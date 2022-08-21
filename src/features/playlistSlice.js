@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
+import { useMemo } from "react"
 
 
 
@@ -21,11 +22,22 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
                 "Content-Type": "application/json"
             }
         })
-       
+        const playlist  = []
 
-       const {description , id, uri ,tracks, name, images} = response.data
         
-       return {id, name, uri ,tracks, description, images}
+
+        // const getPlaylist = playlists.map(({description , id, uri ,tracks, name, images})=>{
+
+        //     return({description , id, uri ,tracks, name, images})
+        // })
+        // console.log(getPlaylist)
+
+        const {description , id, uri ,tracks, name, images} = response.data
+         
+        playlist.push({description , id, uri ,tracks, name, images})
+       
+         
+        return playlist
        
         
     } catch (error) {
@@ -34,7 +46,7 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
     }
   })
 
-  export const getPlaylist2 = createAsyncThunk('playlist/getPlaylist2', 
+  export const getPlaylist2 =  createAsyncThunk('playlist/getPlaylist2', 
   async()=>{
     try {
         const response = await axios.get('https://api.spotify.com/v1/playlists/37i9dQZF1DX2oU49YwtXI2',{
@@ -45,11 +57,14 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
             }
         })
         
-        console.log(response.data)
+        const playlist  = []
 
        const {description , id, uri ,tracks, name, images} = response.data
         
-       return {id, name, uri ,tracks, description, images}
+       playlist.push({description , id, uri ,tracks, name, images})
+      
+        
+       return playlist
        
         
     } catch (error) {
@@ -71,10 +86,14 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
         })
         
         console.log(response.data)
+        const playlist  = []
 
        const {description , id, uri ,tracks, name, images} = response.data
         
-       return {id, name, uri ,tracks, description, images}
+       playlist.push({description , id, uri ,tracks, name, images})
+      
+        
+       return playlist
        
         
     } catch (error) {
@@ -96,9 +115,13 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
         
         console.log(response.data)
 
+        const playlist  = []
+
        const {description , id, uri ,tracks, name, images} = response.data
+       playlist.push({description , id, uri ,tracks, name, images})
+      
         
-       return {id, name, uri ,tracks, description, images}
+       return playlist
        
         
     } catch (error) {
@@ -116,21 +139,35 @@ const playlistSlice = createSlice({
     extraReducers : {
         [getPlaylist1.fulfilled] : (state,action)=>{
            
-            state.isLoading = false
-            state.playlist1 = action.payload
+          
+
+            return{
+                ...state,
+                isLoading : false,
+                playlist1 : action.payload
+            }
+        
         },
         [getPlaylist2.fulfilled] : (state, action)=>{
-
-            state.isLoading = false
-            state.playlist2 = action.payload
+            return{
+                ...state,
+                isLoading : false,
+                playlist2 : action.payload
+            }
         },
         [getPlaylist3.fulfilled] : (state,action)=>{
-            state.isLoading = false;
-            state.playlist3 = action.payload
+            return{
+                ...state,
+                isLoading : false,
+                playlist3 : action.payload
+            }
         },
         [getPlaylist4.fulfilled]: (state, action)=>{
-            state.isLoading = false;
-            state.playlist4 = action.payload
+            return{
+                ...state,
+                isLoading : false,
+                playlist4 : action.payload
+            }
         }
 
     }

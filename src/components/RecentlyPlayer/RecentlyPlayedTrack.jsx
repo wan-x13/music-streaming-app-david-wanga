@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { togglePlaylist } from "../../features/navigateSlice";
+import { viewAllRecentTracks } from "../../features/navigateSlice";
 import { getUri } from "../../features/play";
 import { colors } from "../../utils/style";
 
@@ -8,11 +8,8 @@ import { colors } from "../../utils/style";
 
 const RecentlyPlayerContainer  = styled.div`
         margin-top : 4rem;
-        background-color : ${colors.bagroundBlack};
         height : auto;
-     
-        
-        
+    
       `
 
 const RecentlyPlayerContent = styled.div`
@@ -75,7 +72,7 @@ const RecentlyPlayedTrack = () => {
                <h3>Recently Played</h3>
                <h4
                 
-                 onClick={()=>dispatch(togglePlaylist())}
+                 onClick={()=>dispatch(viewAllRecentTracks())}
                  >
                 view more</h4>
 

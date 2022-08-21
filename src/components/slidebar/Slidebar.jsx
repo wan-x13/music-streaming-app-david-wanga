@@ -3,7 +3,7 @@
 import { useDispatch } from "react-redux";
 import { toggleCreate, toggleLibrary, toggleLiked, toggleSearch, toggleHome } from "../../features/navigateSlice";
 import { initialState } from "../../features/userSlice";
-import { AddPlaylistContainer, AiFillFileAddIcon, BsSearchIcon, FcLikeIcon, FcLikeIconContainerIcon, HeroLogo, HomeContainerIcon, HrContent, LibraryContainerIcon, SearchContainerIcon, SlideBarContainer, VscLibraryIcon } from "./slidebaStyle";
+import { AddPlaylistContainer, AiFillFileAddIcon, BsSearchIcon, FcLikeIcon, FcLikeIconContainerIcon, HeroLogo, HomeContainerIcon, LibraryContainerIcon, SearchContainerIcon, SlideBarContainer, VscLibraryIcon } from "./slidebaStyle";
 import { AiFillHomeIcon } from "./slidebaStyle";
 
 
@@ -42,7 +42,7 @@ const Slidebar = () => {
             </FcLikeIconContainerIcon>
            
           
-        <HrContent/>
+      
 
         </SlideBarContainer>
     );

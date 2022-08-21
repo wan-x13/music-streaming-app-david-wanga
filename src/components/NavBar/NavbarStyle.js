@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { colors } from "../../utils/style";
 
 
 
 export const NavBarContainer = styled.nav`
-                background : #040464;
+                background: #040464;
                 width : 80vw;
                
                 position : fixed;
@@ -16,6 +17,7 @@ export const NavBarContainer = styled.nav`
 `
 export const NavbarContent = styled.div`
          display : flex;
+        
          justify-content : space-between;
          align-items : center;
          margin-left : 20px;
