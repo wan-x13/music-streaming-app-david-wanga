@@ -1,5 +1,5 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import authReducer  from "../features/userSlice"
+import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import authReducer, { getAllTracks, getCategories, getIdentity, getRecentlyPlayed }  from "../features/userSlice"
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
@@ -7,6 +7,7 @@ import trackReducer from "../features/trackSlice"
 import navigateReducer from "../features/navigateSlice"
 import playReducer  from "../features/play"; 
 import playlistReducer from "../features/playlistSlice"
+import searchReducer  from "../features/searchSlice"
 
 
 
@@ -16,6 +17,8 @@ const rootReducer = combineReducers({
     navigate : navigateReducer,
     play : playReducer,
     playlist : playlistReducer,
+    search : searchReducer,
+
 
 })
 export const  persistConfig = {
@@ -27,6 +30,13 @@ const persistedReducer = persistReducer(persistConfig , rootReducer)
 
 export const store = configureStore({
     reducer: persistedReducer,
+    middleware : (getDefaultMiddleware)=>
+      getDefaultMiddleware({
+        thunk : {
+          extraArgument : getIdentity, 
+        },
+        serializableCheck : false
+      })
          
 })
 

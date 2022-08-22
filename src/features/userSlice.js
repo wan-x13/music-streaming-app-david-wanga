@@ -102,7 +102,7 @@ async ()=>{
             "Content-Type": "application/json"
         }
     })
-    console.log(resp)
+    // console.log(resp)
 })
 
 
@@ -134,18 +134,18 @@ const authSlice = createSlice({
         [getAllTracks.fulfilled]: (state, action)=>{
 
             state.AllTracks = action.payload
-            console.log(action)
+            // console.log(action)
             state.isLoading = false
         },
         [getRecentlyPlayed.fulfilled] : (state, action)=>{
             
             state.isLoading = false;
             state.recentPlayer = action.payload
-            console.log(action)
+            // console.log(action)
         },
         [getCategories.fulfilled] : (state, action)=>{
             state.isLoading = false;
-            console.log(action)
+            // console.log(action)
         }
        
     }

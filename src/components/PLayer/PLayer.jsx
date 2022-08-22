@@ -14,7 +14,6 @@ const PLayer = () => {
     const {userToken } = useSelector(state=>state.user)
     const {uri} = useSelector(state=>state.play)
     const [play , setPlay] = useState(false)
-    console.log(uri)
     const initialVolume = 50;
     useEffect(()=>{
         setPlay(true)

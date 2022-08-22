@@ -10,9 +10,11 @@ import { useDispatch, useSelector} from 'react-redux'
 import {  getAllTracks, getCategories, getIdentity, getRecentlyPlayed, getToken } from './features/userSlice'
 import UserLibrary from './pages/Your Library/UserLibrary'
 import { getTracks } from './features/trackSlice'
-
+import SpotifyWebApi from 'spotify-web-api-js';
 import ProtectedRoute from './ProtectedRoute'
 import { getPlaylist1, getPlaylist2, getPlaylist3, getPlaylist4} from './features/playlistSlice'
+import {  setTracks } from './features/searchSlice'
+import { closeWindow, openWindow } from './features/navigateSlice'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -37,7 +39,12 @@ function App() {
   const [tokenUser , setTokenUser] = useState('')
   const dispatch = useDispatch()
   const {tracks} = useSelector(state=>state.track)
+  const {searchTerm, items}  = useSelector(state=>state.search)
  
+
+  let spotifyApi = new SpotifyWebApi()
+
+
     const morceauSong = AllTracks.map(({id, album,name, duration_ms, uri})=>{
           let img= []
          if(album){
@@ -81,6 +88,42 @@ function App() {
     
 
   },[dispatch])
+
+  useEffect(()=>{
+    spotifyApi.setAccessToken(window.localStorage.getItem('token'))
+    spotifyApi.searchTracks(searchTerm)
+       .then(data=>data.tracks.items)
+       .then( resp => resp.map(({id, name, album, duration_ms, uri})=>{
+        let image = []
+        if(album){
+            const {images} = album
+            image = [...images]
+            
+        }
+        return{id, name, image, duration_ms, uri}
+       })).then(resp=>dispatch(setTracks(resp)))
+       
+       .catch(err=>console.log(err))
+       .finally((()=>{
+         if(searchTerm.length === 0){
+           return dispatch(closeWindow())
+         }
+         else{
+          return dispatch(openWindow())
+         }
+         
+       })
+       )
+
+
+
+
+
+
+  },[searchTerm ])
+
+
+
 
   return (
      <BrowserRouter>

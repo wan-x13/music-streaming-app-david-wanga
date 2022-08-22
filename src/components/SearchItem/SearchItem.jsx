@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import styled from 'styled-components';
+import { getSearchTerm } from '../../features/searchSlice';
+
+
+
+
+
+
+
 
 
 const FormContainer = styled.form`
@@ -32,7 +41,14 @@ const BsSearchIcon = styled(BsSearch)`
 const SearchItem = () => {
     const {isSearch} = useSelector(state=>state.navigate)
     const [search , setSearch] = useState('')
+    const dispatch = useDispatch()
 
+
+      dispatch(getSearchTerm(search))
+
+ 
+
+        
     return (
         <FormContainer
          style={{visibility: isSearch ? 'visible' : 'hidden'}}
@@ -43,7 +59,9 @@ const SearchItem = () => {
             placeholder='search song, artist, playlist' 
             autoFocus
             value={search}
-            onChange={(e)=>setSearch(e.target.value)}
+            onChange={(e)=>(
+
+                  setSearch(e.target.value))}
 
             />
         </FormContainer>

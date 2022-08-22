@@ -9,6 +9,7 @@ const initialState = {
     isCreate : false,
     isRecentPlayedTracks : false,
     isPlaylistDetail : false,
+    onSearchTerm : false,
     
 }
 
@@ -26,6 +27,7 @@ export const navigateSlice = createSlice({
             isLibrary: false,
             isRecentPlayedTracks : false,
             isPlaylistDetail : false,
+            onSearchTerm  : false
          }
         },
         toggleSearch: (state)=>{
@@ -46,6 +48,7 @@ export const navigateSlice = createSlice({
                 isLibrary: true,
                 isRecentPlayedTracks: false,
                 isPlaylistDetail : false,
+                onSearchTerm  : false
              }
         },
         toggleLiked: (state)=>{
@@ -58,6 +61,7 @@ export const navigateSlice = createSlice({
                 isLibrary: false,
                 isRecentPlayedTracks: false,
                 isPlaylistDetail : false,
+                onSearchTerm  : false
 
              }
         },
@@ -71,6 +75,7 @@ export const navigateSlice = createSlice({
                 isLibrary: false,
                 isRecentPlayedTracks : false,
                 isPlaylistDetail : false,
+                onSearchTerm  : false
              }
         },
         viewAllRecentTracks : (state)=>{
@@ -83,6 +88,7 @@ export const navigateSlice = createSlice({
                 isLibrary: false,
                 isRecentPlayedTracks : true,
                 isPlaylistDetail : false,
+                onSearchTerm  : false
              }
         },
         viewPlaylistDetail : (state)=>{
@@ -96,8 +102,15 @@ export const navigateSlice = createSlice({
                 isLibrary: false,
                 isRecentPlayedTracks : false,
                 isPlaylistDetail : true,
+                onSearchTerm  : false
              }
            
+        },
+        openWindow : (state)=>{
+            state.onSearchTerm = true
+        },
+        closeWindow : (state)=>{
+            state.onSearchTerm = false
         },
         reinit : (state)=>{
             return{
@@ -114,8 +127,8 @@ export const navigateSlice = createSlice({
 export const {toggleCreate, toggleHome, 
     toggleLibrary, toggleSearch, 
     toggleLiked, viewAllRecentTracks,
-    reinit, viewPlaylistDetail}    = navigateSlice.actions
+    reinit, viewPlaylistDetail, closeWindow, openWindow}    = navigateSlice.actions
 
 
-    
+
 export default navigateSlice.reducer

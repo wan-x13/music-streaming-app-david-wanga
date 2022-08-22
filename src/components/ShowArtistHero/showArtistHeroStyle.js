@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 export const ShowArtistContainer = styled.div`
+            
             background: linear-gradient(to top,#111112, #040464 );
 
         
@@ -10,9 +11,11 @@ export const HeroContainer = styled.div`
             display : flex;
             justify-content: center; 
             gap : 2vw;
+            margin-top: 5vh;
 
             img{
                 width: 20vw;
+                
             }
        `
 export const HeroDescription = styled.div`
