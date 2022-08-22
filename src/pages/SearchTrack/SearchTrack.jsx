@@ -1,21 +1,31 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getUri } from "../../features/play";
+import {SearchTrackContent } from "./searchTrackStyle";
 
 
-const SearchTrack = () => {
+const SearchTrack = ({id, name , url, uri , duration_ms}) => {
     const {items} = useSelector(state=>state.search)
+    const dispatch = useDispatch()
     return (
-        <div
+
+   
+
+     <SearchTrackContent
           style={{
             marginTop : "10vh"
           }}
+          onClick={()=>dispatch(getUri(uri))}
         >
-             {items.map(item=>(
-                <h1>{item.name} </h1>
+                <img src={url} />
+                <h3>{name}</h3>
 
-             ))}
+            
            
             
-        </div>
+        </SearchTrackContent>
+
+ 
+        
     );
 };
 

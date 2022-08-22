@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import {AiFillPlayCircle} from "react-icons/ai"
-import { colors } from "../../utils/style";
+import styled from "styled-components"
 
 
-export const CardContainer = styled.div`
+
+
+
+export const SearchTrackContent = styled.div`
        width : 230px;
        border-radius: 20px;
        background : #232327;
@@ -31,12 +32,5 @@ export const CardContainer = styled.div`
          cursor : pointer;
        }
        
-`
-export const AiFillPlayCircleIcon = styled(AiFillPlayCircle)`
-       height :80px;
-       width : 50px;
-       position : relative;
-       top: -4rem;
-       left: 9rem;
-       fill : ${colors.bagroundButton}
-`
+          
+          `

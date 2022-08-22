@@ -12,10 +12,7 @@ const playSlice = createSlice({
     reducers : {
         getUri : (state, action)=>{
             state.uri = action.payload
-            // return{
-            //     ...state,
-            //     uri : action.payload
-            // }
+            
         }
     }
 
