@@ -96,7 +96,9 @@ const RecentlyPlayedTrack = () => {
                key={recentPlayer[1].id}
                id={recentPlayer[1]?.id}
                uri = {recentPlayer[1].uri}
-               onClick={()=>dispatch(getUri(recentPlayer[1].uri))}
+               onClick={(e)=>{
+                e.stopPropagation()
+                return dispatch(getUri(recentPlayer[1].uri))}}
                >
 
                 <img src={recentPlayer[1]?.image[0].url}

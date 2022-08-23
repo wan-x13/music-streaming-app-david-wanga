@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../utils/style";
+import {HiOutlineLogout} from "react-icons/hi"
 
 
 
@@ -65,3 +66,8 @@ h3{
 
     
 `
+export const HiOutlineLogoutIcon = styled(HiOutlineLogout)`
+            fill : #C5D7D9;
+          
+
+` 

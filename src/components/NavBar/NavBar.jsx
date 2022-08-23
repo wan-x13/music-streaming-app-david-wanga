@@ -4,7 +4,7 @@ import { removeToken } from "../../features/userSlice";
 import { colors } from "../../utils/style";
 
 import SearchItem from "../SearchItem/SearchItem";
-import { ContentUser, NavBarContainer, NavbarContent } from "./NavbarStyle";
+import { ContentUser, HiOutlineLogoutIcon, NavBarContainer, NavbarContent } from "./NavbarStyle";
 
 
 const NavBar = () => {
@@ -37,9 +37,10 @@ const NavBar = () => {
             <ContentUser>
             <h3>{identity?.display_name}</h3>
             <button onClick={handleLogout}>Logout</button>
+            {/* <HiOutlineLogoutIcon/> */}
               </ContentUser>
             </NavbarContent>
-            
+
         </NavBarContainer>
     );
 };

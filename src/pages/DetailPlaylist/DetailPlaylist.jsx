@@ -14,9 +14,6 @@ const DetailPlaylist = () => {
                     <ShowArtistHero/>
                    
                     
-
-          
-         
             
         </DetailPlaylistContainer>
     );

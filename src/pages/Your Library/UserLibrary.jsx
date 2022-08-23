@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 
@@ -8,8 +9,15 @@ const UserLibraryContainer = styled.div`
             `
 
 const UserLibrary = () => {
+
+    const {onSearchTerm} = useSelector(state=>state.navigate)
     return (
-        <UserLibraryContainer>
+        <UserLibraryContainer
+
+        // style={{
+        //     visibility: onSearchTerm ? 'hidden' : 'visible',
+        // }}
+        >
 
             <h1>Personnalization playlist</h1>
             

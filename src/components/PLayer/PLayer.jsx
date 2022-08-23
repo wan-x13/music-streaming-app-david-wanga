@@ -14,7 +14,7 @@ const PLayer = () => {
     const {userToken } = useSelector(state=>state.user)
     const {uri} = useSelector(state=>state.play)
     const [play , setPlay] = useState(false)
-    const initialVolume = 50;
+    const initialVolume = 100;
     useEffect(()=>{
         setPlay(true)
 
@@ -22,10 +22,10 @@ const PLayer = () => {
     return (
         <SpotifyPlayer
 
-          token={'BQDU8wpjir0BXwfU8UGevS1hQYRZulLliEVvfjHKFj52D0fdi-3mlAty0Ikali4WKl45e8rJ7H5fxQqLvVvG8E_QiJpXe-gxeXdGxAORD94l2LRdI_qX5kE1itki1HM_dIjE0fKANFwrNPrh7DLNQh6tvZgGE46f_qK7I59k2wxCfSCtPR9zJfsheGTtpIRoYrclOF8iX_8p15l0h9f3esUGqwbV_nAJ9RGLRdLKMmCIYd4Y4rGZ7w0lVXpQ7h838dIOLRvO-J_vlrGP96tQhdxZHpWYAiDXGfQs4EpM94YBW28Y-xYaRQCdsz_gG8i-A10M2g'}
+          token={'BQAmJPA_o4X40CJANpm5mEOy87kMBkxCDzKjB1zRBC8dVvvCeoa0GFgJR8V9t49PCWvwRTv40Z4W_RkfHYnp8u_Gm-yLNI9a5nsxsZwNHUSxH2LsL7ty9EFqatvJggchJRhe0xCE-8DU-6hVRP620uYmL6avyFwe1eTCSmZzJRo2N8C2v7n8CoBF8IvObtI3C1CnNSjvg_hwpdGsmWO_VlOeMkXSclFDVe9GNzlbDUr2z5eCFXrvsMdQ0Dz3V9WHfqcJVE4HSi4x_JXhbaxRuuK2ZCLX6iEWhP7Q6NH6VWuGdQ6p-WwhHu8fxpdOp9eT4WKHm1tVCdHpquYdHq4'}
           uris = {[uri]}
           initialVolume = {initialVolume}
-          play={play}
+          play={true}
 
           styles={{
             activeColor : '#fff',

@@ -10,8 +10,6 @@ const TrackItem = ({id,albumTrack, name, uri, duration_ms}) => {
           <h4>{name}</h4>
          </TrackHero>
           
-          <h3>{name}</h3>
-          <h3>{duration_ms}</h3>
          
 
             
