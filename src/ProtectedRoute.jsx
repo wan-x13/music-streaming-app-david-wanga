@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import NavBar from './components/NavBar/NavBar';
 import PLayer from './components/PLayer/PLayer';
 import Slidebar from './components/slidebar/Slidebar';
 import Home from './pages/Home/Home';
@@ -26,11 +27,15 @@ const ProtectedRoute = () => {
         <RouteContainer>
            
             <RouteContent>
-               <div>
+            
                  <Slidebar/>
+              
+               <div>
+               <NavBar/>
+               <Home/>
+
                </div>
-               
-                <Home/>
+              
                 
             </RouteContent>
 
