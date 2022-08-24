@@ -28,16 +28,14 @@ const NavBar = () => {
 
     return (
         <NavBarContainer
-          // style={{
-          //   backgroundColor: isPlaylistDetail ? colors.backgroundNavbar :  "black" 
-          // }}
+       
           >
             <NavbarContent> 
                 <SearchItem/> 
             <ContentUser>
             <h3>{identity?.display_name}</h3>
             <button onClick={handleLogout}>Logout</button>
-            {/* <HiOutlineLogoutIcon/> */}
+           
               </ContentUser>
             </NavbarContent>
 

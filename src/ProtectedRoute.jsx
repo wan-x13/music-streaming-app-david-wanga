@@ -7,10 +7,12 @@ import Home from './pages/Home/Home';
 
 
 const RouteContainer = styled.div` 
-
+   
 `
 const RouteContent = styled.div`
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    
     
     `
 const PlayerContainer = styled.div`
@@ -24,8 +26,11 @@ const ProtectedRoute = () => {
         <RouteContainer>
            
             <RouteContent>
-            <Slidebar/>
-            <Home/>
+               <div>
+                 <Slidebar/>
+               </div>
+               
+                <Home/>
                 
             </RouteContent>
 

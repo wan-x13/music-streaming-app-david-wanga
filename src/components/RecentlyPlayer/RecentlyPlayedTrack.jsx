@@ -14,9 +14,9 @@ const RecentlyPlayerContainer  = styled.div`
 
 const RecentlyPlayerContent = styled.div`
       margin : 30px;
-      display: flex;
-      flex-wrap : wrap;
-      gap : 2vw;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    
      
       `
 const Head = styled.div`
@@ -24,19 +24,21 @@ const Head = styled.div`
       justify-content : space-between;
 
       
-      h4:hover{
+      h3:hover{
         cursor: pointer;
       }
       h3{
-        font-size: 30px;
+        font-size: 2vw;
         line-height : 40px;
+        padding-left: 2vw;
       }
-      h4{
+      h3{
         margin-top: 40px;
+        padding-right: 2vw;
       }
      `
 const CardPlayer = styled.div`
-       width : 230px;
+       width : 16vw;
        background : #232327;
        display : flex; 
        flex-direction : column;
@@ -46,7 +48,7 @@ const CardPlayer = styled.div`
        margin-top: -40px;
 
        img{
-        width : 200px;
+        width : 14vw;
         border-radius: 10px;
         box-shadow: 0px 4px 4px 0px #00000040;
         margin-top : 20px;
@@ -70,11 +72,11 @@ const RecentlyPlayedTrack = () => {
         <RecentlyPlayerContainer>
             <Head>
                <h3>Recently Played</h3>
-               <h4
+               <h3
                 
                  onClick={()=>dispatch(viewAllRecentTracks())}
                  >
-                view more</h4>
+                view more</h3>
 
             </Head>
             

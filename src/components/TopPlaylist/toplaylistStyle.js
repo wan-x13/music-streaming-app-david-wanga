@@ -6,7 +6,8 @@ export const TopPlaylistContainer = styled.div`
         margin-top : 20px;
         margin-bottom : 50px;
       h3{
-        font-size : 30px;
+        font-size : 2vw;
+        padding-left: 2vw;
       }
        
         
@@ -14,25 +15,25 @@ export const TopPlaylistContainer = styled.div`
 `
 export const CardContainer = styled.div`
         margin : 60px 30px 30px 30px;
-        display: flex;
-        flex-wrap : wrap;
-        gap : 2vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* grid-gap : 0.1vw; */
 
        
 
        `
 export const CardContent = styled.div`
-            width : 230px;
+            width : 16vw;
             background : #232327;
             display : flex; 
             flex-direction : column;
             justify-content : center;
             align-items: center;
-            border-radius : 20Px;
+            border-radius : 1.5vw;
             margin-top: -40px;
 
             img{
-            width : 200px;
+            width : 14vw;
             border-radius: 10px;
             box-shadow: 0px 4px 4px 0px #00000040;
             margin-top : 20px;
