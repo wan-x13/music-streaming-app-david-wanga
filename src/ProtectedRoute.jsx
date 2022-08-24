@@ -12,8 +12,12 @@ const RouteContainer = styled.div`
 `
 const RouteContent = styled.div`
       display: grid;
+<<<<<<< HEAD
+      grid-template-columns: repeat(2, 1fr);
+=======
       grid-template-columns: 1fr 3fr;
     
+>>>>>>> develop
     
     `
 const PlayerContainer = styled.div`

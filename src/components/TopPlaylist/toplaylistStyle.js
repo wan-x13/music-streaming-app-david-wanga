@@ -17,7 +17,11 @@ export const CardContainer = styled.div`
         margin : 60px 30px 30px 30px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+<<<<<<< HEAD
+        gap : 2vw;
+=======
         /* grid-gap : 0.1vw; */
+>>>>>>> develop
 
        
 
