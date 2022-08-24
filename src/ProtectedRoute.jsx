@@ -10,7 +10,8 @@ const RouteContainer = styled.div`
 
 `
 const RouteContent = styled.div`
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     
     `
 const PlayerContainer = styled.div`

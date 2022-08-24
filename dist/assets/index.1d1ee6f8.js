@@ -658,7 +658,8 @@ h3{
 `,qb=()=>{const e=jt(),{TitleApp:t}=Tf;return z(Ib,{children:[S(Vb,{children:t}),z(zb,{onClick:()=>e(Kx()),children:[S("span",{children:S(Nb,{})}),S("p",{children:"Home"})]}),z(Mb,{onClick:()=>e(Zx()),children:[S("span",{children:S($b,{})}),S("p",{children:"Search"})]}),z(Lb,{onClick:()=>e(Jx()),children:[S("span",{children:S(Fb,{})}),S("p",{children:"Your library"})]}),z(Ub,{onClick:()=>e(Xx()),children:[S("span",{children:S(Bb,{})}),S("p",{children:"Create Playlist"})]}),z(Hb,{onClick:()=>e(ek()),children:[S("span",{children:S(Wb,{})}),S("p",{children:"Liked songs"})]})]})},Yb=L.div` 
 
 `,Gb=L.div`
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     
     `,Qb=L.div`
       position : fixed;
