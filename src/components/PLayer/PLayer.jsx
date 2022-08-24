@@ -22,10 +22,10 @@ const PLayer = () => {
     return (
         <SpotifyPlayer
 
-          token={'BQAmJPA_o4X40CJANpm5mEOy87kMBkxCDzKjB1zRBC8dVvvCeoa0GFgJR8V9t49PCWvwRTv40Z4W_RkfHYnp8u_Gm-yLNI9a5nsxsZwNHUSxH2LsL7ty9EFqatvJggchJRhe0xCE-8DU-6hVRP620uYmL6avyFwe1eTCSmZzJRo2N8C2v7n8CoBF8IvObtI3C1CnNSjvg_hwpdGsmWO_VlOeMkXSclFDVe9GNzlbDUr2z5eCFXrvsMdQ0Dz3V9WHfqcJVE4HSi4x_JXhbaxRuuK2ZCLX6iEWhP7Q6NH6VWuGdQ6p-WwhHu8fxpdOp9eT4WKHm1tVCdHpquYdHq4'}
+          token={'BQCEqAEXZDA2R6X9mGXaMVwnbnRNGlELtQ3tIhNmp_ZEOuP32iCUe1ln9F3As3trNIFy6GJCCY-CAmbAleCpKpYU4hs_ZFnmHkOdhe11Op5H-t535Fe3Nk3-gEr9L_hAiI5W_yJ7z0B5Y8_ZlgMt1F1ct6UXfzoWgnnsfWrzylO_l3kxJHlaIlmMJ8KRhz-K2OqbyDWRXs0cmf4IlRUzugrkwmc1N_scqEyYTwfNOgAR-XFvIJ-1PlDnDAaYEXJllbeKbuqDMKQPriEw_0gs0_eVHi51pzlDkz-VjmfUgWqzxQxrYQ_k4EYYPOp_d-tdqI8BcCmxuGWJIsRWy00'}
           uris = {[uri]}
           initialVolume = {initialVolume}
-          play={true}
+          play={play}
 
           styles={{
             activeColor : '#fff',

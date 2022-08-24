@@ -93,17 +93,17 @@ async ()=>{
 
 
 
-export const getCategories = createAsyncThunk('user/getCategories', 
-async ()=>{
-    const resp = await axios.get(`https://api.spotify.com/v1/users/31t2md6klgjx653ats7j53gpthkq/playlists `,{
+// export const getCategories = createAsyncThunk('user/getCategories', 
+// async ()=>{
+//     const resp = await axios.get(`https://api.spotify.com/v1/users/31t2md6klgjx653ats7j53gpthkq/playlists `,{
 
-        headers : {
-            Authorization : "Bearer " + window.localStorage.getItem("token"),
-            "Content-Type": "application/json"
-        }
-    })
-    // console.log(resp)
-})
+//         headers : {
+//             Authorization : "Bearer " + window.localStorage.getItem("token"),
+//             "Content-Type": "application/json"
+//         }
+//     })
+//     // console.log(resp)
+// })
 
 
       
@@ -143,10 +143,10 @@ const authSlice = createSlice({
             state.recentPlayer = action.payload
             // console.log(action)
         },
-        [getCategories.fulfilled] : (state, action)=>{
-            state.isLoading = false;
-            // console.log(action)
-        }
+        // [getCategories.fulfilled] : (state, action)=>{
+        //     state.isLoading = false;
+        //     // console.log(action)
+        // }
        
     }
   

@@ -1,5 +1,5 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import authReducer, { getAllTracks, getCategories, getIdentity, getRecentlyPlayed }  from "../features/userSlice"
+import authReducer, { getAllTracks, getIdentity, getRecentlyPlayed }  from "../features/userSlice"
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";

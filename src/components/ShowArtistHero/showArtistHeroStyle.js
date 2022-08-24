@@ -23,13 +23,18 @@ export const HeroDescription = styled.div`
            flex-direction : column;
            justify-content: center;
           
+          
             h1{
-                font-size: 80px;
+                font-size: 70px;
                 color : #E2E8FB;
+                width: 600px;
+                
+                
             }
             p{
                 color : #C5C8D0;
                 font-size: 15px;
                 margin-top : -8vh;
+              
             }
           `

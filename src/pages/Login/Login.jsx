@@ -41,11 +41,13 @@ const Login = () => {
     return (
         <LoginContainer>
             
+           
             <Welcome>Bienvenue à</Welcome>
             <TitlePlatform>{TitleApp}</TitlePlatform>
             <Blason>Prêt à vous plonger dans l'inconnue ?</Blason>
             <ButtonLink 
             onClick={handleClick}>Login with spotify</ButtonLink>
+            
            
             
         </LoginContainer>

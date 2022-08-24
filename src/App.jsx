@@ -7,7 +7,7 @@ import Home from './pages/Home/Home'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux'
-import {  getAllTracks, getCategories, getIdentity, getRecentlyPlayed, getToken } from './features/userSlice'
+import {  getAllTracks,getIdentity, getRecentlyPlayed, getToken } from './features/userSlice'
 import UserLibrary from './pages/Your Library/UserLibrary'
 import { getTracks } from './features/trackSlice'
 import SpotifyWebApi from 'spotify-web-api-js';
@@ -79,7 +79,7 @@ function App() {
     dispatch(getTracks(morceauSong))
     dispatch(getIdentity())
     dispatch(getRecentlyPlayed())
-    dispatch(getCategories())
+    // dispatch(getCategories())
     dispatch(getPlaylist1())
     dispatch(getPlaylist2())
     dispatch(getPlaylist3())

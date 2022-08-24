@@ -4,44 +4,31 @@ import TrackItem from "../TrackItem/TrackItem";
 import { HeroContainer, HeroDescription, ShowArtistContainer } from "./showArtistHeroStyle";
 
 
-const ShowArtistHero = () => {
+const ShowArtistHero = ({images, name, description, uri}) => {
     const {playlist1, playlist2, playlist3, playlist4} = useSelector(state=>state.playlist)
 
-    const {items} = playlist1[0].tracks
-
-    
-    const trackItem  = items.map(({track})=>(track)).map(({album, id, name, duration_ms , uri})=>{
-                 
-                    let image = []
-                    let nameTrack ;
-                 if(album){
-                    const {images, name} = album
-                   image = [...images]
-                   nameTrack = name
-                 }
-        return {...image, nameTrack, id, name, duration_ms, uri}
-    })
-   
-    console.log(trackItem)
+  
+ 
 
 
     return (
         <ShowArtistContainer>
-           
-            {playlist1?.map((play)=>
+          
 
                 <HeroContainer>
-                <img src={play.images[0].url}/>
+                <img src={images}/>
                 <HeroDescription>
-                    <h1>{play.name}</h1>
-                    <p>{play.description}</p>
+                    <h1>{name}</h1>
+                    <p>{description}</p>
                 </HeroDescription>
 
                 </HeroContainer>
             
-            )}
+        
             <TrackItem/>
-         <ButtonPlay/>
+         <ButtonPlay
+           uri={uri}
+         />
          
 
         </ShowArtistContainer>

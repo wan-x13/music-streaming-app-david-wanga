@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -52,6 +52,7 @@ const SearchItem = () => {
     return (
         <FormContainer
          style={{visibility: isSearch ? 'visible' : 'hidden'}}
+         onSubmit={(e)=>e.preventDefault()}
         >
             <BsSearchIcon/>
             <input 
@@ -60,7 +61,7 @@ const SearchItem = () => {
             autoFocus
             value={search}
             onChange={(e)=>(
-
+                 
                   setSearch(e.target.value))}
 
             />

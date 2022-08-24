@@ -6,12 +6,12 @@ import Home from './pages/Home/Home';
 
 
 
-const RouteContainer = styled.div`
-   
+const RouteContainer = styled.div` 
 
 `
 const RouteContent = styled.div`
       display: flex;
+    
     `
 const PlayerContainer = styled.div`
       position : fixed;
