@@ -46,9 +46,14 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
+   {isLoading ? (
+    <div>
+        <h1>please....</h1>
+    </div>
 
-
-           { playlist1?.map(play=> 
+   ): (
+    <>
+     { playlist1?.map(play=> 
                  <ShowArtistHero
                    images={play.images?.[0].url}
                    name = {play.name}
@@ -71,6 +76,11 @@ const DetailPlaylist = () => {
                     
                     ) }
             
+     
+    </>
+   )}
+
+          
 
           
                
@@ -88,6 +98,13 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
+            {isLoading ? (
+                <div>
+                    <h1>please...</h1>
+                </div>
+
+            ):(
+                <>
 
               { playlist2?.map(play=> 
                  <ShowArtistHero
@@ -111,6 +128,10 @@ const DetailPlaylist = () => {
               
                 
                 )}
+                </>
+
+            )}
+
                
                    
                    
@@ -125,6 +146,13 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
+                 {isLoading ? (
+                <div>
+                    <h1>please...</h1>
+                </div>
+
+            ):(
+                <>
 
               {  
                  playlist3?.map(play=> 
@@ -148,6 +176,12 @@ const DetailPlaylist = () => {
               
                 
                 )}
+                </>
+
+            )}
+
+
+
                
                 
         </DetailPlaylistContainer>
@@ -159,8 +193,15 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
+                 {isLoading ? (
+                <div>
+                    <h1>please...</h1>
+                </div>
 
-              {
+            ):(
+                <>
+
+{
                 playlist4?.map(play=> 
                  <ShowArtistHero
                    images={play.images?.[0].url}
@@ -183,6 +224,12 @@ const DetailPlaylist = () => {
                 
                 }
                
+
+                </>
+
+            )}
+
+              
                    
                    
                     
