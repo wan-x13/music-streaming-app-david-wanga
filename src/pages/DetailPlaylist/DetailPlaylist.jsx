@@ -47,27 +47,28 @@ const DetailPlaylist = () => {
     return (
         <DetailPlaylistContainer>
 
-              {  playlist1?.map(play=> 
-                 <ShowArtistHero
-                   images={play.images?.[0].url}
-                   name = {play.name}
-                   description = {play.description}
-                   uri = {play.uri}
-                 />
-                
-                ) }
+            {isLoading ? (
+                <div>
+                    <h1>please...</h1>
+                </div>
 
-            {  playlistArray(item1)?.map(play=>
-                <ItemMusic
-                key={play.id}
-                image = {play[0].url}
-                name = {play.name}
-                nameTrack = {play.nameTrack}
-                uri = {play.uri}
-                />
-              
-                
-                )}
+            ):(
+                playlistArray(item1)?.map(play=>
+                    <ItemMusic
+                    key={play.id}
+                    image = {play[0].url}
+                    name = {play.name}
+                    nameTrack = {play.nameTrack}
+                    uri = {play.uri}
+                    />
+                  
+                    
+                    )
+
+            )}
+            
+
+          
                
                    
                    
