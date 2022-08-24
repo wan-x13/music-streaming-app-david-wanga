@@ -119,6 +119,8 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
         
     } catch (error) {
         console.log(error)
+        isLoading = true
+        console.log(isLoading)
         
     }
   })
@@ -139,44 +141,32 @@ const playlistSlice = createSlice({
            
             return{
                 ...state,
-                isLoading : false,
                 playlist1 : action.payload
             }
         
         },
-        [getPlaylist1.rejected] : (state)=>{
-            state.isLoading = true
-        },
         [getPlaylist2.fulfilled] : (state, action)=>{
             return{
                 ...state,
-                isLoading : false,
                 playlist2 : action.payload
             }
         },
-        [getPlaylist2.rejected] : (state)=>{
-            state.isLoading = true
-        },
+        
         [getPlaylist3.fulfilled] : (state,action)=>{
             return{
                 ...state,
-                isLoading : false,
                 playlist3 : action.payload
             }
         },
-        [getPlaylist3.rejected] : (state)=>{
-            state.isLoading = true
-        },
+      
         [getPlaylist4.fulfilled]: (state, action)=>{
             return{
                 ...state,
-                isLoading : false,
+                
                 playlist4 : action.payload
             }
         },
-        [getPlaylist4.rejected] : (state)=>{
-            state.isLoading = true
-        },
+       
 
     }
 })

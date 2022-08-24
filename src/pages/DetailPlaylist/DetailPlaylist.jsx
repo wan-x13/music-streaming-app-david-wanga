@@ -53,7 +53,7 @@ const DetailPlaylist = () => {
 
    ): (
     <>
-     {/* { playlist1?.map(play=> 
+     { playlist1?.map(play=> 
                  <ShowArtistHero
                    images={play.images?.[0].url}
                    name = {play.name}
@@ -74,7 +74,7 @@ const DetailPlaylist = () => {
                     />
                   
                     
-                    ) } */}
+                    ) }
             
      
     </>
@@ -105,8 +105,7 @@ const DetailPlaylist = () => {
 
             ):(
                 <>
-{/* 
-              { playlist2?.map(play=> 
+                                { playlist2?.map(play=> 
                  <ShowArtistHero
                    images={play.images?.[0].url}
                    name = {play.name}
@@ -127,11 +126,12 @@ const DetailPlaylist = () => {
                 />
               
                 
-                )} */}
+                )}
                 </>
 
             )}
 
+  
                
                    
                    
@@ -154,7 +154,7 @@ const DetailPlaylist = () => {
             ):(
                 <>
 
-              {/* {  
+              {  
                  playlist3?.map(play=> 
                  <ShowArtistHero
                    images={play.images?.[0].url}
@@ -175,7 +175,7 @@ const DetailPlaylist = () => {
                 />
               
                 
-                )} */}
+                )}
                 </>
 
             )}
@@ -193,7 +193,8 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
-                 {isLoading ? (
+
+          {isLoading ? (
                 <div>
                     <h1>please...</h1>
                 </div>
@@ -201,7 +202,8 @@ const DetailPlaylist = () => {
             ):(
                 <>
 
-            {/* {
+                  
+              {
                 playlist4?.map(play=> 
                  <ShowArtistHero
                    images={play.images?.[0].url}
@@ -223,13 +225,13 @@ const DetailPlaylist = () => {
               
                 
                 }
-                */}
-
+               
                 </>
 
             )}
 
-              
+            
+
                    
                    
                     
