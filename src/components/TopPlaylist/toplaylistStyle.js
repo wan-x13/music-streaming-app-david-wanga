@@ -14,8 +14,8 @@ export const TopPlaylistContainer = styled.div`
 `
 export const CardContainer = styled.div`
         margin : 60px 30px 30px 30px;
-        display: flex;
-        flex-wrap : wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         gap : 2vw;
 
        

@@ -372,8 +372,8 @@ h3{
         
 `,kk=L.div`
         margin : 60px 30px 30px 30px;
-        display: flex;
-        flex-wrap : wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         gap : 2vw;
 
        
@@ -411,11 +411,12 @@ h3{
         
 
 `;L.div`
-            flex : 2;
+        
             
 `;const bk=L.div`
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2vw;
             margin-top: 5vh;
             margin-bottom: 10vh;
             
@@ -511,7 +512,7 @@ h3{
                 margin-top : -8vh;
               
             }
-          `,ku=({images:e,name:t,description:r,uri:n})=>(Te(i=>i.playlist),z(Nk,{children:[z($k,{children:[S("img",{src:e}),z(zk,{children:[S("h1",{children:t}),S("p",{children:r})]})]}),S(Ik,{}),S(Dk,{uri:n})]})),Co=L.div`
+          `,ku=({images:e,name:t,description:r,uri:n,id:i})=>(Te(o=>o.playlist),z(Nk,{children:[z($k,{children:[S("img",{src:e}),z(zk,{children:[S("h1",{children:t}),S("p",{children:r})]})]}),S(Ik,{}),S(Dk,{uri:n})]})),Co=L.div`
     margin-top : 3.5rem;
     box-sizing : border-box;
     display: flex;

@@ -4,7 +4,7 @@ import TrackItem from "../TrackItem/TrackItem";
 import { HeroContainer, HeroDescription, ShowArtistContainer } from "./showArtistHeroStyle";
 
 
-const ShowArtistHero = ({images, name, description, uri}) => {
+const ShowArtistHero = ({images, name, description, uri, id}) => {
     const {playlist1, playlist2, playlist3, playlist4} = useSelector(state=>state.playlist)
 
   
