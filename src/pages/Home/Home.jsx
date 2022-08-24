@@ -24,7 +24,7 @@ const Home = () => {
  if(isLibrary){
 
   return( <HomeContainer>
-    <NavBar/>
+  
     <UserLibrary/>
 
    </HomeContainer>)
@@ -34,7 +34,7 @@ const Home = () => {
     return (
 
         <HomeContainer>
-        <NavBar/>
+      
           <AllTracks/>
     </HomeContainer>
 
@@ -45,7 +45,7 @@ const Home = () => {
 
     return(
         <HomeContainer>
-            <NavBar/>
+            
             <DetailPlaylist/>
         </HomeContainer>
     )
@@ -53,7 +53,7 @@ const Home = () => {
  if(onSearchTerm){
     return(
         <HomeContainer>
-            <NavBar/>
+           
             <SearchTrackContainer>
 
 
@@ -82,7 +82,7 @@ const Home = () => {
         <HomeContainer>
            
           
-           <NavBar/>
+        
          
             <RecentlyPlayedTrack/>
             <TopPlaylist/>

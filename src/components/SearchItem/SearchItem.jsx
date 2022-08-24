@@ -20,9 +20,9 @@ const FormContainer = styled.form`
       height : 10vh;
 
       input{
-        width : 500px;
-        border-radius: 20px;
-        height : 40px;
+        width : 35vw;
+        border-radius: 1vw;
+        height : 6vh;
         padding-left : 60px;
         font-size: 15px;
         color : black;

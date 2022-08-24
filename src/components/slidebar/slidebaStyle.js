@@ -7,12 +7,10 @@ import {FcLike} from "react-icons/fc"
 
 
 export const SlideBarContainer = styled.div`
-     position : fixed;
+     
      display : flex;
      flex-direction : column;
-     padding : 30px;
-     width: 30vw;
-         
+     padding : 30px;          
 `
 
 export const HouseICon = styled.span`

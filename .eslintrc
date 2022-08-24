@@ -1,0 +1,24 @@
+{
+    "parser": "babel-eslint",
+    "extends" : [
+        "airbnb", 
+        "prettier/react",
+        "eslint: recommended",
+        "plugin: react/recommended",
+        "plugin : prettier/recommended"
+    ],
+    "plugins": ["import"],
+    "env" : {
+        "browser": true,
+        "es6": true,
+        "es2021": true,
+        "jest": true
+    },
+    "globals": {},
+    "rules": {
+        "import/no-cycle": "warn",
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    }
+}

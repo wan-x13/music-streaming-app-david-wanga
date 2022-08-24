@@ -13,8 +13,13 @@ const Slidebar = () => {
 
     return (
         <SlideBarContainer>
+            <div
+              style={{
+                position: "fixed",
+              }}
+            >
 
-                <HeroLogo>
+            <HeroLogo>
                     {TitleApp}
                 </HeroLogo>
           <HomeContainerIcon onClick={()=>dispatch(toggleHome())}>
@@ -41,6 +46,11 @@ const Slidebar = () => {
                 <p>Liked songs</p>
             </FcLikeIconContainerIcon>
            
+
+
+            </div>
+
+                
           
       
 
