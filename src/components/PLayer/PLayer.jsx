@@ -1,12 +1,6 @@
-
-
-
 import SpotifyPlayer from "react-spotify-web-playback"
 import { useSelector } from "react-redux";
-import styled from "styled-components";
 import { useEffect, useState } from "react";
-
-
 
 
 
@@ -18,7 +12,9 @@ const PLayer = () => {
     useEffect(()=>{
         setPlay(true)
 
-    },[play])
+    },[play]);
+
+    
     return (
         <SpotifyPlayer
 

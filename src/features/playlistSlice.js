@@ -118,9 +118,14 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
        
         
     } catch (error) {
-        console.log(error)
-        isLoading = true
-        console.log(isLoading)
+        
+        return {
+            ...initialState,
+
+            isLoading : true
+        }
+      
+       
         
     }
   })
