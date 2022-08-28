@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     searchTerm : "",
     items : [],
+    isEmpty : "",
     isLoading : true
   
 }
@@ -19,10 +20,13 @@ const searchSlice = createSlice({
         setTracks : (state, action)=>{
             state.items = action.payload
         },
+        getIsEmpty : (state, action)=>{
+            state.isEmpty = action.payload
+        }
        
     }
 })
 
-export const {getSearchTerm ,setTracks} = searchSlice.actions
+export const {getSearchTerm ,setTracks , getIsEmpty} = searchSlice.actions
 
 export default searchSlice.reducer

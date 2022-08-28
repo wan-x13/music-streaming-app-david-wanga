@@ -39,7 +39,7 @@ function App() {
   const [tokenUser , setTokenUser] = useState('')
   const dispatch = useDispatch()
   const {tracks} = useSelector(state=>state.track)
-  const {searchTerm, items}  = useSelector(state=>state.search)
+  const {searchTerm, items, isEmpty}  = useSelector(state=>state.search)
  
 
   let spotifyApi = new SpotifyWebApi()
@@ -105,10 +105,10 @@ function App() {
        
        .catch(err=>console.log(err))
        .finally((()=>{
-         if(searchTerm.length === 0){
+         if(isEmpty.length === 0){
            return dispatch(closeWindow())
          }
-         else{
+         else if(searchTerm){
           return dispatch(openWindow())
          }
          
