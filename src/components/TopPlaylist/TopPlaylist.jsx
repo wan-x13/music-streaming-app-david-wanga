@@ -13,7 +13,7 @@ const TopPlaylist = () => {
         <TopPlaylistContainer>
               <h3>Best of Artists</h3>
               <CardContainer>
-                {isLoading ?(
+                {/* {isLoading ?(
                     <div>
                         <h1>please...</h1>
                     </div>
@@ -98,7 +98,7 @@ const TopPlaylist = () => {
               
 
              
-
+ */}
 
               </CardContainer>
 

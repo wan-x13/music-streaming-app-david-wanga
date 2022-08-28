@@ -8,7 +8,7 @@ import navigateReducer from "../features/navigateSlice"
 import playReducer  from "../features/play"; 
 import playlistReducer from "../features/playlistSlice"
 import searchReducer  from "../features/searchSlice"
-
+import modalReducer from "../features/modalSlice"
 
 
 const rootReducer = combineReducers({
@@ -18,6 +18,7 @@ const rootReducer = combineReducers({
     play : playReducer,
     playlist : playlistReducer,
     search : searchReducer,
+    modal : modalReducer,
 
 
 })
@@ -30,13 +31,7 @@ const persistedReducer = persistReducer(persistConfig , rootReducer)
 
 export const store = configureStore({
     reducer: persistedReducer,
-    middleware : (getDefaultMiddleware)=>
-      getDefaultMiddleware({
-        thunk : {
-          extraArgument : getIdentity, 
-        },
-        serializableCheck : false
-      })
+   
          
 })
 

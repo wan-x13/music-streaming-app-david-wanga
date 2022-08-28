@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { openModal } from "../../features/modalSlice";
 import { removeToken } from "../../features/userSlice";
 import { colors } from "../../utils/style";
 
@@ -16,11 +17,9 @@ const NavBar = () => {
 
     
   const handleLogout = ()=>{
-     dispatch(removeToken())
-     window.localStorage.removeItem('token')
-   
-    return userToken
+     dispatch(openModal())
   }
+  
   if(!userToken){
 
     return <Navigate to="/"/>

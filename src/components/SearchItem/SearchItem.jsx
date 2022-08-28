@@ -16,7 +16,7 @@ const FormContainer = styled.form`
 
       input{
         width : 35vw;
-        border-radius: 1vw;
+        border-radius: 3vw;
         height : 6vh;
         padding-left : 60px;
         font-size: 15px;
@@ -24,7 +24,7 @@ const FormContainer = styled.form`
       }
 `
 const BsSearchIcon = styled(BsSearch)`
-    font-size : 30px;
+    font-size : 25px;
     font-weight : 600;
     fill : black;
     position : relative;
