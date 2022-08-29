@@ -25,12 +25,14 @@ const TitleTrack = styled.div`
       }
       h4{
         font-size: 14px;
+        font-weight: 400;
         
       }
     
 `
 const AlbumTrack = styled.h4`
          font-size: 14px;
+         font-weight: 400;
       
 `
 const ButtonAdd = styled.div`

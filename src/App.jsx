@@ -13,7 +13,7 @@ import { getTracks } from './features/trackSlice'
 import SpotifyWebApi from 'spotify-web-api-js';
 import ProtectedRoute from './ProtectedRoute'
 import { getPlaylist1, getPlaylist2, getPlaylist3, getPlaylist4} from './features/playlistSlice'
-import {  setTracks } from './features/searchSlice'
+import {  getIsloading, setTracks } from './features/searchSlice'
 import { closeWindow, openWindow } from './features/navigateSlice'
 
 
@@ -41,8 +41,10 @@ function App() {
   const dispatch = useDispatch()
   const {tracks} = useSelector(state=>state.track)
   const {searchTerm, items, isEmpty}  = useSelector(state=>state.search)
- 
-
+  const {isLoading} = useSelector(state=>state.playlist)
+  const reponse = ((false || false) || (false || false))
+  console.log(reponse)
+  
   let spotifyApi = new SpotifyWebApi()
 
 
@@ -85,10 +87,11 @@ function App() {
     dispatch(getPlaylist2())
     dispatch(getPlaylist3())
     dispatch(getPlaylist4())
+    
   
     
 
-  },[dispatch])
+  },[isLoading, dispatch])
 
   useEffect(()=>{
     spotifyApi.setAccessToken(window.localStorage.getItem('token'))
@@ -106,11 +109,16 @@ function App() {
        
        .catch(err=>console.log(err))
        .finally((()=>{
+        
          if(isEmpty.length === 0){
            return dispatch(closeWindow())
          }
+        else if(items.length === 0){
+          return(dispatch(getIsloading(true)))
+        }
          else if(searchTerm){
           return dispatch(openWindow())
+          
          }
          
        })

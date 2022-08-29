@@ -1,10 +1,16 @@
 import styled from "styled-components";
-
+import { ThreeDots } from "react-loader-spinner";
 
 
 export const TopPlaylistContainer = styled.div`
         margin-top : 20px;
         margin-bottom : 50px;
+        height: 65vh;
+        /* border: 2px saddlebrown solid; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
       h3{
         font-size : 2vw;
         padding-left: 2vw;
@@ -14,14 +20,11 @@ export const TopPlaylistContainer = styled.div`
         
 `
 export const CardContainer = styled.div`
-        margin : 60px 30px 30px 30px;
+        margin : 50px 30px 30px 30px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-<<<<<<< HEAD
-        gap : 2vw;
-=======
-        /* grid-gap : 0.1vw; */
->>>>>>> develop
+
+
 
        
 
@@ -47,4 +50,16 @@ export const CardContent = styled.div`
             background-color : #38383B;
             cursor : pointer;
             }
+            h4{
+              font-size: 18px;
+              font-weight: 400;
+            }
        `
+
+
+export const ThreeDotsContainer = styled.div`
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   
+`

@@ -29,10 +29,10 @@ export const playlistArray = (array)=>{
 
 const DetailPlaylist = () => {
 
-    const {isLoading , playlist1, playlist2, playlist3, playlist4 , nameOfPlaylist} = useSelector(state=>state.playlist)
+    const {playlist1, playlist2, playlist3, playlist4 , nameOfPlaylist} = useSelector(state=>state.playlist)
     const dispatch = useDispatch()
   
-   
+  
     const item1 = playlist1?.[0].tracks?.items
     const item2 = playlist2?.[0].tracks?.items
     const item3 = playlist3?.[0].tracks?.items
@@ -46,12 +46,7 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
-   {isLoading ? (
-    <div>
-        <h1>please....</h1>
-    </div>
-
-   ): (
+   
     <>
      { playlist1?.map(play=> 
                  <ShowArtistHero
@@ -78,7 +73,7 @@ const DetailPlaylist = () => {
             
      
     </>
-   )}
+   
 
           
 
@@ -98,12 +93,7 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
-            {isLoading ? (
-                <div>
-                    <h1>please...</h1>
-                </div>
-
-            ):(
+           
                 <>
                                 { playlist2?.map(play=> 
                  <ShowArtistHero
@@ -129,7 +119,7 @@ const DetailPlaylist = () => {
                 )}
                 </>
 
-            )}
+            
 
   
                
@@ -146,12 +136,7 @@ const DetailPlaylist = () => {
 
     return (
         <DetailPlaylistContainer>
-                 {isLoading ? (
-                <div>
-                    <h1>please...</h1>
-                </div>
-
-            ):(
+             
                 <>
 
               {  
@@ -178,7 +163,7 @@ const DetailPlaylist = () => {
                 )}
                 </>
 
-            )}
+            
 
 
 
@@ -194,12 +179,7 @@ const DetailPlaylist = () => {
     return (
         <DetailPlaylistContainer>
 
-          {isLoading ? (
-                <div>
-                    <h1>please...</h1>
-                </div>
-
-            ):(
+          
                 <>
 
                   
@@ -228,7 +208,7 @@ const DetailPlaylist = () => {
                
                 </>
 
-            )}
+            
 
             
 

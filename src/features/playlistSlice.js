@@ -5,13 +5,12 @@ import { useMemo } from "react"
 
 
 const initialState ={
-    isLoading : true,
     nameOfPlaylist : "",
     error : "",
-    isPlaylist1 : false,
-    isPlaylist2 : false,
-    isPlaylist3 : false,
-    isPlaylist4 : false,
+    isPlaylist1 : true,
+    isPlaylist2 : true,
+    isPlaylist3 : true,
+    isPlaylist4 : true,
     playlist1 : [],
     playlist2 : [],
     playlist3 : [],
@@ -96,7 +95,7 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
        
         
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
         
     }
   })
@@ -124,11 +123,7 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
         
     } catch (error) {
         
-        return {
-            ...initialState,
-
-            isLoading : true
-        }
+     
       
        
         
@@ -149,10 +144,10 @@ const playlistSlice = createSlice({
           getNameOfPlaylist : (state, action)=>{
             state.nameOfPlaylist = action.payload
           },
-          setIsloading : (state)=>{
-            state.isLoading = isPlaylist1 || isPlaylist2 || isPlaylist3 || isPlaylist4
+        //   setIsloading : (state)=>{
+        //     state.isLoading = (state.isPlaylist1 || state.isPlaylist2) || (state.isPlaylist3 || state.isPlaylist4)
             
-          }
+        //   }
 
     },
     extraReducers : {
@@ -160,14 +155,12 @@ const playlistSlice = createSlice({
               state.isPlaylist1 = true
               
         },
-        [getPlaylist1.fulfilled] : (state,action)=>{
-           
-            return{
-                ...state,
-                playlist1 : action.payload,
-                isPlaylist1 : false,
-                error : ""
-            }
+        [getPlaylist1.fulfilled] : (state,action)=>{  
+                state.playlist1 = action.payload
+                state.isPlaylist1 = false
+                state.error = ""
+                console.log(action)
+            
         
         },
         [getPlaylist1.rejected] : (state,action)=>{
@@ -176,7 +169,7 @@ const playlistSlice = createSlice({
         },
         [getPlaylist2.pending] :(state)=>{
             state.isPlaylist2 = true
-            console.log(state)
+            
       },
         [getPlaylist2.fulfilled] : (state, action)=>{
             return{
@@ -188,6 +181,7 @@ const playlistSlice = createSlice({
         },
         [getPlaylist2.rejected] : (state, action)=>{
             state.isPlaylist2 = true
+          
             state.error = action.error.message
         },
 
@@ -218,22 +212,25 @@ const playlistSlice = createSlice({
         
       
         [getPlaylist4.fulfilled]: (state, action)=>{
+            console.log(action)
             return{
                 ...state,
                 
                 playlist4 : action.payload,
                 isPlaylist4 : false,
-                error : ""
+                error : "",
+                
             }
         },
         [getPlaylist4.rejected] : (state,action)=>{
             state.isPlaylist4 = true
             state.error = action.error.message
+            
         },
         
        
 
     }
 })
-export const {getNameOfPlaylist } = playlistSlice.actions
+export const {getNameOfPlaylist} = playlistSlice.actions
 export default playlistSlice.reducer

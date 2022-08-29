@@ -5,7 +5,7 @@ const initialState = {
     searchTerm : "",
     items : [],
     isEmpty : "",
-    isLoading : true
+    isLoading : false
   
 }
 
@@ -22,11 +22,14 @@ const searchSlice = createSlice({
         },
         getIsEmpty : (state, action)=>{
             state.isEmpty = action.payload
+        },
+        getIsloading : (state,action)=>{
+            state.isLoading = action.payload
         }
        
     }
 })
 
-export const {getSearchTerm ,setTracks , getIsEmpty} = searchSlice.actions
+export const {getSearchTerm ,setTracks , getIsEmpty, getIsloading} = searchSlice.actions
 
 export default searchSlice.reducer

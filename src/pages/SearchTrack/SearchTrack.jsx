@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
+import OvalLoader from "../../components/Loader/OvalLoader";
 import { getUri } from "../../features/play";
 import {SearchTrackContent } from "./searchTrackStyle";
 
 
 const SearchTrack = ({id, name , url, uri , duration_ms}) => {
-    const {items} = useSelector(state=>state.search)
+    const {items, isLoading} = useSelector(state=>state.search)
     const dispatch = useDispatch()
     return (
 
@@ -16,8 +17,11 @@ const SearchTrack = ({id, name , url, uri , duration_ms}) => {
           }}
           onClick={()=>dispatch(getUri(uri))}
         >
-                <img src={url} />
+            
+            <img src={url} />
                 <h3>{name}</h3>
+           
+                
 
             
            

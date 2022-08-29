@@ -6,13 +6,15 @@ import styled from "styled-components"
 
 export const SearchTrackContent = styled.div`
        width : 16vw;
+       height : 45vh;
        border-radius: 20px;
        background : #232327;
-       margin-top: 5rem;
-       margin-left : 30px;
+       /* margin-left : 20px;
+       margin-right: 20PX; */
        display : flex;
        flex-direction : column;
        justify-content: center;
+       align-items: center;
        
 
        img{
@@ -25,7 +27,10 @@ export const SearchTrackContent = styled.div`
        }
        h3{
         padding-left : 1.5vw;
+        padding-right: 1.5vw;
         font-size: 1.1vw;
+        font-weight: 400;
+        text-align: center;
        }
        
        &:hover {
