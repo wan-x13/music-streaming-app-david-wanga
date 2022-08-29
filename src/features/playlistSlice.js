@@ -7,6 +7,11 @@ import { useMemo } from "react"
 const initialState ={
     isLoading : true,
     nameOfPlaylist : "",
+    error : "",
+    isPlaylist1 : false,
+    isPlaylist2 : false,
+    isPlaylist3 : false,
+    isPlaylist4 : false,
     playlist1 : [],
     playlist2 : [],
     playlist3 : [],
@@ -132,45 +137,100 @@ export const getPlaylist1 = createAsyncThunk('playlist/getPlaylist1',
 
   
 
+
+
+
+
+
 const playlistSlice = createSlice({
     name: "playlist",
     initialState,
     reducers : {
           getNameOfPlaylist : (state, action)=>{
             state.nameOfPlaylist = action.payload
+          },
+          setIsloading : (state)=>{
+            state.isLoading = isPlaylist1 || isPlaylist2 || isPlaylist3 || isPlaylist4
+            
           }
 
     },
     extraReducers : {
+        [getPlaylist1.pending] :(state)=>{
+              state.isPlaylist1 = true
+              
+        },
         [getPlaylist1.fulfilled] : (state,action)=>{
            
             return{
                 ...state,
-                playlist1 : action.payload
+                playlist1 : action.payload,
+                isPlaylist1 : false,
+                error : ""
             }
         
         },
+        [getPlaylist1.rejected] : (state,action)=>{
+            state.isPlaylist1 = true
+            state.error = action.error.message
+        },
+        [getPlaylist2.pending] :(state)=>{
+            state.isPlaylist2 = true
+            console.log(state)
+      },
         [getPlaylist2.fulfilled] : (state, action)=>{
             return{
                 ...state,
-                playlist2 : action.payload
+                playlist2 : action.payload,
+                isPlaylist2 : false,
+                error : ""
             }
+        },
+        [getPlaylist2.rejected] : (state, action)=>{
+            state.isPlaylist2 = true
+            state.error = action.error.message
+        },
+
+        [getPlaylist3.pending] :(state)=>{
+            state.isPlaylist3 = true
+            
         },
         
         [getPlaylist3.fulfilled] : (state,action)=>{
+
+            
             return{
                 ...state,
-                playlist3 : action.payload
+                playlist3 : action.payload,
+                isPlaylist3 : false,
+                error : ""
+                
             }
         },
+        [getPlaylist3.rejected] : (state,action)=>{
+            state.isPlaylist3 = true
+            state.error = action.error.message
+        },
+        [getPlaylist4.pending] :(state)=>{
+            state.isPlaylist4 = true
+           
+         },
+        
       
         [getPlaylist4.fulfilled]: (state, action)=>{
             return{
                 ...state,
                 
-                playlist4 : action.payload
+                playlist4 : action.payload,
+                isPlaylist4 : false,
+                error : ""
             }
         },
+        [getPlaylist4.rejected] : (state,action)=>{
+            state.isPlaylist4 = true
+            state.error = action.error.message
+        },
+        
        
 
     }

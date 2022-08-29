@@ -2,7 +2,7 @@
 
 import Login from './pages/Login/Login'
 import { colors } from './utils/style'
-import { useState , useEffect} from 'react'
+import { useState , useEffect, memo} from 'react'
 import Home from './pages/Home/Home'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
  
 
 `
+
 
 
 function App() {
@@ -143,4 +144,4 @@ function App() {
   )
 }
 
-export default App
+export default memo(App)

@@ -16,7 +16,9 @@ const Modal = () => {
 
     const handleLogout = ()=>{
         dispatch(removeToken())
+        window.localStorage.removeItem('token')
         dispatch(closeModal())
+        
         return userToken
 
     }
@@ -30,7 +32,7 @@ const Modal = () => {
          }}
         >
             <ModalContent>
-            <MessageInfo>Êtes vous sûr de se déconnecter ?</MessageInfo>
+            <MessageInfo>Êtes vous sûr de vous déconnecter ?</MessageInfo>
 
             <ButtonContainer>
                 <ButtonConfirm

@@ -12,6 +12,7 @@ export const CardContainer = styled.div`
        display : flex;
        flex-direction : column;
        justify-content: center;
+       box-sizing: border-box;
        
 
        img{
@@ -24,6 +25,8 @@ export const CardContainer = styled.div`
        }
        h3{
         padding-left : 20px;
+        font-size: 18px;
+        font-weight: 400;
        }
        
        &:hover {

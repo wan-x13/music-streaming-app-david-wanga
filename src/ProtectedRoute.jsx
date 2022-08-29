@@ -33,7 +33,8 @@ const ProtectedRoute = () => {
         >
            <div
               style={{
-                opacity : isOn ? 0.33 : 1
+                opacity : isOn ? 0.33 : 1,
+                pointerEvents : isOn ? "none" : "initial"
               }}
            >
            <RouteContent>

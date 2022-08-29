@@ -25,6 +25,7 @@ const TitleTrack = styled.div`
       }
       h4{
         font-size: 14px;
+        
       }
     
 `

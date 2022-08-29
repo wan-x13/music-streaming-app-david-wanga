@@ -31,11 +31,10 @@ const Head = styled.div`
         font-size: 2vw;
         line-height : 40px;
         padding-left: 2vw;
-      }
-      h3{
         margin-top: 40px;
         padding-right: 2vw;
       }
+    
      `
 const CardPlayer = styled.div`
        width : 16vw;
@@ -57,6 +56,10 @@ const CardPlayer = styled.div`
        &:hover {
         background-color : #38383B;
         cursor : pointer;
+      }
+      h4{
+        font-size: 18px;
+        font-weight: 400;
       }
        
       `

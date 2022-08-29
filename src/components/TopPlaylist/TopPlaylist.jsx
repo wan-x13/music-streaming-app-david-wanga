@@ -7,7 +7,18 @@ import { CardContainer, CardContent, TopPlaylistContainer } from "./toplaylistSt
 
 const TopPlaylist = () => {
 
-    const {playlist1, playlist2, playlist3, playlist4, isLoading} = useSelector(state=>state.playlist)
+    const {playlist1, playlist2,
+         playlist3, playlist4, 
+         isLoading, isPlaylist1, 
+         isPlaylist2, isPlaylist3,
+        isPlaylist4} = useSelector(state=>state.playlist)
+
+        console.log(isPlaylist1)
+        console.log(isPlaylist2)
+        console.log(isPlaylist3)
+        console.log(isPlaylist4)
+
+         console.log(isLoading)
     const dispatch = useDispatch()
     return (
         <TopPlaylistContainer>
