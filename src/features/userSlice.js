@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
+
 import axios from "axios";
 
 
-let token2 = localStorage.getItem("token")
+
 
 
 
@@ -93,17 +93,6 @@ async ()=>{
 
 
 
-// export const getCategories = createAsyncThunk('user/getCategories', 
-// async ()=>{
-//     const resp = await axios.get(`https://api.spotify.com/v1/users/31t2md6klgjx653ats7j53gpthkq/playlists `,{
-
-//         headers : {
-//             Authorization : "Bearer " + window.localStorage.getItem("token"),
-//             "Content-Type": "application/json"
-//         }
-//     })
-//     // console.log(resp)
-// })
 
 
       
