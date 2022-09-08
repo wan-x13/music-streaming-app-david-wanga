@@ -6,13 +6,14 @@ import { colors } from "../../utils/style";
 export const CardContainer = styled.div`
        width : 230px;
        border-radius: 20px;
-       background : #232327;
+       background-color : #232327;
        margin-top: 5rem;
        margin-left : 30px;
        display : flex;
        flex-direction : column;
        justify-content: center;
        box-sizing: border-box;
+       transition: background-color 0.5s;
        
 
        img{

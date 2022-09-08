@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ItemMusic from '../../components/itemMusic/ItemMusic';
+import Loader from '../../components/Loader/Loader';
+
 
 
 import ShowArtistHero from '../../components/ShowArtistHero/ShowArtistHero';
@@ -29,14 +31,18 @@ export const playlistArray = (array)=>{
 
 const DetailPlaylist = () => {
 
-    const {playlist1, playlist2, playlist3, playlist4 , nameOfPlaylist} = useSelector(state=>state.playlist)
+    const {playlist1, playlist2, 
+        playlist3, playlist4 , 
+        nameOfPlaylist, isPlaylist1 ,
+        isPlaylist2, isPlaylist3, isPlaylist4} = useSelector(state=>state.playlist)
     const dispatch = useDispatch()
   
   
-    const item1 = playlist1?.[0].tracks?.items
-    const item2 = playlist2?.[0].tracks?.items
-    const item3 = playlist3?.[0].tracks?.items
-    const item4 = playlist4?.[0].tracks?.items
+    const item1 = playlist1?.[0]?.tracks.items
+    const item2 = playlist2?.[0]?.tracks.items
+    const item3 = playlist3?.[0]?.tracks.items
+    const item4 = playlist4?.[0]?.tracks.items
+    const isLoading = ((isPlaylist1 || isPlaylist2)||(isPlaylist3 || isPlaylist4))
 
 
 
@@ -58,7 +64,7 @@ const DetailPlaylist = () => {
                 
                 )}
 
-            {
+            { item1?.length === 0 || item1 == undefined ? <Loader/> : 
                 playlistArray(item1)?.map(play=>
                     <ItemMusic
                     key={play.id}
@@ -105,7 +111,8 @@ const DetailPlaylist = () => {
                 
                 )}
 
-            {  playlistArray(item2)?.map(play=>
+            { item2?.length === 0 || item2 == undefined ? <Loader/> :
+             playlistArray(item2)?.map(play=>
                 <ItemMusic
                 key={play.id}
                 image = {play[0].url}
@@ -150,7 +157,9 @@ const DetailPlaylist = () => {
                 
                 ) }
 
-            {     playlistArray(item3)?.map(play=>
+            {    item3?.length === 0 || item3== undefined ? <Loader/> : 
+                
+                playlistArray(item3)?.map(play=>
                 <ItemMusic
                 key={play.id}
                 image = {play[0].url}
@@ -194,7 +203,8 @@ const DetailPlaylist = () => {
                 
                 )}
 
-            {  playlistArray(item4)?.map(play=>
+            {  item4?.length === 0 || item4 == undefined ? <Loader/>: 
+             playlistArray(item4)?.map(play=>
                 <ItemMusic
                 key={play.id}
                 image = {play[0].url}

@@ -38,13 +38,14 @@ const Head = styled.div`
      `
 const CardPlayer = styled.div`
        width : 16vw;
-       background : #232327;
+       background-color : #232327;
        display : flex; 
        flex-direction : column;
        justify-content : center;
        align-items: center;
        border-radius : 20Px;
        margin-top: -40px;
+       transition:  background-color 0.5s;
 
        img{
         width : 14vw;

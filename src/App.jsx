@@ -82,7 +82,7 @@ function App() {
     dispatch(getTracks(morceauSong))
     dispatch(getIdentity())
     dispatch(getRecentlyPlayed())
-    // dispatch(getCategories())
+  
     dispatch(getPlaylist1())
     dispatch(getPlaylist2())
     dispatch(getPlaylist3())

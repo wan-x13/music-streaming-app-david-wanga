@@ -10,6 +10,7 @@ const ItemMusicContainer = styled.div`
      margin-top: 20px;
      margin-left: 6.1rem;
      margin-right: 50px;
+     transition: background-color 0.5s;
 
      &:hover{
         background-color : #38383B;

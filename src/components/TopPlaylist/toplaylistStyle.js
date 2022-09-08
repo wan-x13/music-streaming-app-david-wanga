@@ -6,11 +6,11 @@ export const TopPlaylistContainer = styled.div`
         margin-top : 20px;
         margin-bottom : 50px;
         height: 65vh;
-        /* border: 2px saddlebrown solid; */
+       
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
+        
       h3{
         font-size : 2vw;
         padding-left: 2vw;
@@ -31,19 +31,21 @@ export const CardContainer = styled.div`
        `
 export const CardContent = styled.div`
             width : 16vw;
-            background : #232327;
+            background-color : #232327;
             display : flex; 
             flex-direction : column;
             justify-content : center;
             align-items: center;
             border-radius : 1.5vw;
             margin-top: -40px;
+            transition: background-color 0.5s;
 
             img{
             width : 14vw;
             border-radius: 10px;
             box-shadow: 0px 4px 4px 0px #00000040;
             margin-top : 20px;
+        
             }
 
             &:hover {
