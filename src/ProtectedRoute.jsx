@@ -1,5 +1,7 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import Modal from './components/Modal/Modal';
 import NavBar from './components/NavBar/NavBar';
 import PLayer from './components/PLayer/PLayer';
 import Slidebar from './components/slidebar/Slidebar';
@@ -12,13 +14,8 @@ const RouteContainer = styled.div`
 `
 const RouteContent = styled.div`
       display: grid;
-<<<<<<< HEAD
-      grid-template-columns: repeat(2, 1fr);
-=======
       grid-template-columns: 1fr 3fr;
-    
->>>>>>> develop
-    
+     
     `
 const PlayerContainer = styled.div`
       position : fixed;
@@ -27,26 +24,43 @@ const PlayerContainer = styled.div`
      
       `
 const ProtectedRoute = () => {
+
+    const {isOn} = useSelector(state=>state.modal)
+
     return (
-        <RouteContainer>
-           
-            <RouteContent>
+        <RouteContainer
+       
+        >
+           <div
+              style={{
+                opacity : isOn ? 0.33 : 1,
+                pointerEvents : isOn ? "none" : "initial"
+              }}
+           >
+           <RouteContent>
             
-                 <Slidebar/>
-              
-               <div>
-               <NavBar/>
-               <Home/>
+            <Slidebar/>
+         
+          <div>
+            <NavBar/>
+            <Home/>
 
-               </div>
-              
-                
-            </RouteContent>
+          </div>
+         
+           
+       </RouteContent>
 
-            <PlayerContainer>
-               <PLayer/>
 
-            </PlayerContainer>
+      
+
+       <PlayerContainer>
+          <PLayer/>
+
+       </PlayerContainer>
+
+           </div>
+           <Modal/>
+           
           
             
           

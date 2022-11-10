@@ -3,12 +3,7 @@ import { BsSearch } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styled from 'styled-components';
-import { getSearchTerm } from '../../features/searchSlice';
-
-
-
-
-
+import { getIsEmpty, getSearchTerm } from '../../features/searchSlice';
 
 
 
@@ -21,7 +16,7 @@ const FormContainer = styled.form`
 
       input{
         width : 35vw;
-        border-radius: 1vw;
+        border-radius: 3vw;
         height : 6vh;
         padding-left : 60px;
         font-size: 15px;
@@ -29,7 +24,7 @@ const FormContainer = styled.form`
       }
 `
 const BsSearchIcon = styled(BsSearch)`
-    font-size : 30px;
+    font-size : 25px;
     font-weight : 600;
     fill : black;
     position : relative;
@@ -44,15 +39,20 @@ const SearchItem = () => {
     const dispatch = useDispatch()
 
 
-      dispatch(getSearchTerm(search))
+     
+
+      const handleSubmit = (e)=>{
+          e.preventDefault()
+          dispatch(getSearchTerm(search))
+      }
 
  
-
+        dispatch(getIsEmpty(search))
         
     return (
         <FormContainer
          style={{visibility: isSearch ? 'visible' : 'hidden'}}
-         onSubmit={(e)=>e.preventDefault()}
+         onSubmit={handleSubmit}
         >
             <BsSearchIcon/>
             <input 

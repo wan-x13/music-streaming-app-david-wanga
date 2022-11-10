@@ -31,21 +31,21 @@ const Head = styled.div`
         font-size: 2vw;
         line-height : 40px;
         padding-left: 2vw;
-      }
-      h3{
         margin-top: 40px;
         padding-right: 2vw;
       }
+    
      `
 const CardPlayer = styled.div`
        width : 16vw;
-       background : #232327;
+       background-color : #232327;
        display : flex; 
        flex-direction : column;
        justify-content : center;
        align-items: center;
        border-radius : 20Px;
        margin-top: -40px;
+       transition:  background-color 0.5s;
 
        img{
         width : 14vw;
@@ -57,6 +57,10 @@ const CardPlayer = styled.div`
        &:hover {
         background-color : #38383B;
         cursor : pointer;
+      }
+      h4{
+        font-size: 18px;
+        font-weight: 400;
       }
        
       `

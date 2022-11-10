@@ -53,12 +53,13 @@ button {
 }
 
 h3{
-    width : 7vw;
+    width : 8vw;
     border-radius : 1vw;
     border : solid 0.1vw  #C5D7D9;
     text-align: center;
     padding : 0.3vw;
     background-color : #1D1D34;
+    box-sizing: border-box;
 }
 
     

@@ -11,11 +11,11 @@ const Login = () => {
 
     const {userToken  } = useSelector((state)=>state.user)
    const {TitleApp} = initialState
-    console.log(TitleApp)
+   
     const handleClick = ()=>{
 
-        const CLIENT_ID = "b60e4391958140e0adb302ec6a11f6f5"
-        const REDIRECT_URI = "https://wamuzika.netlify.app"
+        const CLIENT_ID = import.meta.env.VITE_CLIENT_ID
+        const REDIRECT_URI = "http://localhost:5173"
         const AUTH_ENDPOINT ="https://accounts.spotify.com/authorize"
         const RESPONSE_TYPE ="token&show_dialog=true"
 

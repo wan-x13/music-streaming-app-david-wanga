@@ -13,7 +13,7 @@ export const Button = styled.div`
         height: 50px;
         margin-top: 4vh;
         margin-bottom: 4vh;
-        margin-left: 7vw;
+        /* margin-left: 7vw; */
 
         &:hover{
             cursor: pointer;

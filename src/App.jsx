@@ -2,7 +2,7 @@
 
 import Login from './pages/Login/Login'
 import { colors } from './utils/style'
-import { useState , useEffect} from 'react'
+import { useState , useEffect, memo} from 'react'
 import Home from './pages/Home/Home'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -13,7 +13,7 @@ import { getTracks } from './features/trackSlice'
 import SpotifyWebApi from 'spotify-web-api-js';
 import ProtectedRoute from './ProtectedRoute'
 import { getPlaylist1, getPlaylist2, getPlaylist3, getPlaylist4} from './features/playlistSlice'
-import {  setTracks } from './features/searchSlice'
+import {  getIsloading, setTracks } from './features/searchSlice'
 import { closeWindow, openWindow } from './features/navigateSlice'
 
 
@@ -33,15 +33,18 @@ const GlobalStyle = createGlobalStyle`
 `
 
 
+
 function App() {
 
   const {userToken , AllTracks } = useSelector(state=> state.user)
   const [tokenUser , setTokenUser] = useState('')
   const dispatch = useDispatch()
   const {tracks} = useSelector(state=>state.track)
-  const {searchTerm, items}  = useSelector(state=>state.search)
- 
-
+  const {searchTerm, items, isEmpty}  = useSelector(state=>state.search)
+  const {isLoading} = useSelector(state=>state.playlist)
+  const reponse = ((false || false) || (false || false))
+  console.log(reponse)
+  
   let spotifyApi = new SpotifyWebApi()
 
 
@@ -79,15 +82,16 @@ function App() {
     dispatch(getTracks(morceauSong))
     dispatch(getIdentity())
     dispatch(getRecentlyPlayed())
-    // dispatch(getCategories())
+  
     dispatch(getPlaylist1())
     dispatch(getPlaylist2())
     dispatch(getPlaylist3())
     dispatch(getPlaylist4())
+    
   
     
 
-  },[dispatch])
+  },[isLoading, dispatch])
 
   useEffect(()=>{
     spotifyApi.setAccessToken(window.localStorage.getItem('token'))
@@ -105,11 +109,16 @@ function App() {
        
        .catch(err=>console.log(err))
        .finally((()=>{
-         if(searchTerm.length === 0){
+        
+         if(isEmpty.length === 0){
            return dispatch(closeWindow())
          }
-         else{
+        else if(items.length === 0){
+          return(dispatch(getIsloading(true)))
+        }
+         else if(searchTerm){
           return dispatch(openWindow())
+          
          }
          
        })
@@ -143,4 +152,4 @@ function App() {
   )
 }
 
-export default App
+export default memo(App)

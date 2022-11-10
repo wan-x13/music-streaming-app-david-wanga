@@ -5,9 +5,11 @@ import UserLibrary from "../Your Library/UserLibrary";
 import RecentlyPlayedTrack from "../../components/RecentlyPlayer/RecentlyPlayedTrack";
 import AllTracks from "../AllTracks/AllTracks";
 import TopPlaylist from "../../components/TopPlaylist/TopPlaylist";
-import { HomeContainer, SearchTrackContainer } from "./homeStyle";
+import { HomeContainer, HomeContent, SearchTrackContainer } from "./homeStyle";
 import DetailPlaylist from "../DetailPlaylist/DetailPlaylist";
 import SearchTrack from "../SearchTrack/SearchTrack";
+import Loader from "../../components/Loader/Loader";
+import OvalLoader from "../../components/Loader/OvalLoader";
 
 
 
@@ -19,7 +21,7 @@ const Home = () => {
         isRecentPlayedTracks ,  
         isPlaylistDetail, onSearchTerm} = useSelector(state=>state.navigate) 
  
-        const {items} = useSelector(state=>state.search)
+        const {items , isLoading} = useSelector(state=>state.search)
        
  if(isLibrary){
 
@@ -30,7 +32,7 @@ const Home = () => {
    </HomeContainer>)
  }
  if(isRecentPlayedTracks){
-
+    
     return (
 
         <HomeContainer>
@@ -54,24 +56,47 @@ const Home = () => {
     return(
         <HomeContainer>
            
-            <SearchTrackContainer>
+          
+           {isLoading ? <div 
+        style={{
+            display: "flex",
+            justifyContent :  "center",
+            alignItems : "center",
+            height: "100vh",
+            
 
+        }}
+    >
 
-            {items?.map(item=>(
-                 
-                 <SearchTrack
-                  key={item.id}
-                  id ={item.id}
-                  name = {item.name}
-                  uri = {item.uri}
-                  url = {item.image[0]?.url}
-                 />
+                    <Loader/>
 
+                  </div> 
+   
+  : 
+  <HomeContent>
 
-            ))}
+<SearchTrackContainer>
+      {items?.map(item=>(
+                
+                <SearchTrack
+                 key={item.id}
+                 id ={item.id}
+                 name = {item.name}
+                 uri = {item.uri}
+                 url = {item.image[0]?.url}
+                />
+   
+   
+           ))}
+   
+        </SearchTrackContainer>
 
-
-            </SearchTrackContainer>
+  </HomeContent>
+     
+    }
+   
+    
+           
 
            
         </HomeContainer>

@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const ShowArtistContainer = styled.div`
             
             background: linear-gradient(to top,#111112, #040464 );
+            padding-right: 7vw;
+            padding-left: 7vw;
 
         
 `
